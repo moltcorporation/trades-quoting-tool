@@ -120,12 +120,12 @@ export default async function PublicQuotePage({
           <div className="border-t border-zinc-100 p-5 sm:p-8">
             {quote.status === "sent" && <ApproveButton quoteId={quote.id} />}
             {quote.status === "approved" && (
-              <div className="rounded-lg bg-green-50 p-4 text-center">
-                <p className="text-lg font-semibold text-green-700">
-                  Quote Approved &#10003;
+              <div className="rounded-lg bg-yellow-50 border border-yellow-200 p-4 text-center">
+                <p className="text-lg font-semibold text-yellow-800">
+                  Quote Approved &#10003; &mdash; Awaiting Payment
                 </p>
                 {quote.approvedAt && (
-                  <p className="mt-1 text-sm text-green-600">
+                  <p className="mt-1 text-sm text-yellow-700">
                     Approved on{" "}
                     {new Date(quote.approvedAt).toLocaleDateString("en-US", {
                       month: "long",
@@ -151,9 +151,9 @@ export default async function PublicQuotePage({
               </div>
             )}
             {quote.status === "paid" && (
-              <div className="rounded-lg bg-blue-50 p-4 text-center">
-                <p className="text-sm font-medium text-blue-700">
-                  This quote has been paid.
+              <div className="rounded-lg bg-green-100 border border-green-300 p-4 text-center">
+                <p className="text-lg font-semibold text-green-800">
+                  Quote Approved &amp; Paid &#10003;
                 </p>
               </div>
             )}
