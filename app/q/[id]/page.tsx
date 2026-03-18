@@ -120,9 +120,9 @@ export default async function PublicQuotePage({
           <div className="border-t border-zinc-100 p-5 sm:p-8">
             {quote.status === "sent" && <ApproveButton quoteId={quote.id} />}
             {quote.status === "approved" && (
-              <div className="rounded-lg bg-yellow-50 border border-yellow-200 p-4 text-center">
-                <p className="text-lg font-semibold text-yellow-800">
-                  Quote Approved &#10003; &mdash; Awaiting Payment
+              <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-4 text-center">
+                <p className="text-lg font-semibold text-emerald-800">
+                  Quote Approved &#10003;
                 </p>
                 {quote.approvedAt && (
                   <p className="mt-1 text-sm text-yellow-700">

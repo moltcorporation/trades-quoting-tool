@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trades Quoting Tool — Professional Quotes, Approvals & Payments for Tradespeople",
+  title: "Trades Quoting Tool — Professional Quotes & Approvals for Tradespeople",
   description:
-    "Send professional quotes, get client approvals, and collect payments. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
+    "Send professional quotes and get client approvals instantly. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
 };
 
 const steps = [
@@ -22,8 +22,8 @@ const steps = [
   },
   {
     number: 3,
-    title: "Client approves & pays",
-    description: "One tap to approve. Payment collected via Stripe.",
+    title: "Client approves instantly",
+    description: "One tap to approve. You get notified, they get a receipt.",
     icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
   },
 ];
@@ -68,7 +68,7 @@ export default function LandingPage() {
             </svg>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Send quotes. Get approvals. Collect payment.
+            Send quotes. Get approvals. Track everything.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
             Professional quoting for plumbers, electricians, and contractors.
@@ -171,7 +171,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-0.5">&#x2713;</span>
-                  Stripe-powered payment collection
+                  Approval tracking with timestamps
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-0.5">&#x2713;</span>
@@ -377,10 +377,10 @@ export default function LandingPage() {
           <h2 className="text-3xl font-bold text-slate-900 text-center">Frequently asked questions</h2>
           <div className="mt-12 space-y-6">
             {[
-              { q: "Is the free tier really free?", a: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required. Upgrade to Pro when you need unlimited quotes and payment collection." },
-              { q: "How do clients pay?", a: "When a client approves a quote, they pay through Stripe Checkout — the same secure payment system used by Amazon, Shopify, and millions of businesses. All payments are PCI compliant and encrypted." },
+              { q: "Is the free tier really free?", a: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required. Upgrade to Pro when you need unlimited quotes." },
+              { q: "How do clients approve?", a: "You send them a link to a professional quote page. They review the line items and tap 'Approve.' You get notified instantly and the approval is timestamped — no more he-said, she-said." },
               { q: "Can I use this on my phone?", a: "Yes. The entire tool is designed mobile-first. Create quotes on your phone between jobs, and your clients view and approve quotes on their phones too." },
-              { q: "What happens when a client approves a quote?", a: "They're taken to a Stripe payment page. Once payment is complete, you get notified and the quote is marked as paid in your dashboard." },
+              { q: "What happens when a client approves a quote?", a: "You get notified instantly. The approval is timestamped in your dashboard. You collect payment however you prefer — Venmo, Zelle, check, cash — and mark it as paid in the app." },
               { q: "Do I need a Stripe account?", a: "Yes, but it's free to create. You keep 100% of your quote amount minus standard Stripe processing fees (2.9% + 30¢). We don't take any additional cut." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-lg border border-slate-200 bg-white">
@@ -401,9 +401,9 @@ export default function LandingPage() {
               "@type": "FAQPage",
               mainEntity: [
                 { "@type": "Question", name: "Is the free tier really free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required." } },
-                { "@type": "Question", name: "How do clients pay?", acceptedAnswer: { "@type": "Answer", text: "When a client approves a quote, they pay through Stripe Checkout — PCI compliant and encrypted." } },
+                { "@type": "Question", name: "How do clients approve?", acceptedAnswer: { "@type": "Answer", text: "You send a link. They review and tap Approve. You get notified instantly with a timestamped approval." } },
                 { "@type": "Question", name: "Can I use this on my phone?", acceptedAnswer: { "@type": "Answer", text: "Yes. The entire tool is designed mobile-first for tradespeople on the go." } },
-                { "@type": "Question", name: "What happens when a client approves a quote?", acceptedAnswer: { "@type": "Answer", text: "They pay through Stripe, you get notified, and the quote is marked as paid in your dashboard." } },
+                { "@type": "Question", name: "What happens when a client approves a quote?", acceptedAnswer: { "@type": "Answer", text: "You get notified instantly. Collect payment however you prefer and mark it paid in your dashboard." } },
                 { "@type": "Question", name: "Do I need a Stripe account?", acceptedAnswer: { "@type": "Answer", text: "Yes, but it's free. You keep 100% minus standard Stripe fees (2.9% + 30¢)." } },
               ],
             }),
