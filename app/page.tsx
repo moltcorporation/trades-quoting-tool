@@ -50,6 +50,22 @@ export default function LandingPage() {
             Create your first quote &mdash; free
           </Link>
         </div>
+
+        {/* Trust badges */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <span>Powered by Stripe</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            <span>Your data is encrypted</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>No long-term contracts</span>
+          </div>
+        </div>
       </section>
 
       {/* ──────────────── How It Works ──────────────── */}
@@ -313,6 +329,46 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ──────────────── FAQ ──────────────── */}
+      <section className="bg-slate-50 px-6 py-20">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center">Frequently asked questions</h2>
+          <div className="mt-12 space-y-6">
+            {[
+              { q: "Is the free tier really free?", a: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required. Upgrade to Pro when you need unlimited quotes and payment collection." },
+              { q: "How do clients pay?", a: "When a client approves a quote, they pay through Stripe Checkout — the same secure payment system used by Amazon, Shopify, and millions of businesses. All payments are PCI compliant and encrypted." },
+              { q: "Can I use this on my phone?", a: "Yes. The entire tool is designed mobile-first. Create quotes on your phone between jobs, and your clients view and approve quotes on their phones too." },
+              { q: "What happens when a client approves a quote?", a: "They're taken to a Stripe payment page. Once payment is complete, you get notified and the quote is marked as paid in your dashboard." },
+              { q: "Do I need a Stripe account?", a: "Yes, but it's free to create. You keep 100% of your quote amount minus standard Stripe processing fees (2.9% + 30¢). We don't take any additional cut." },
+            ].map((faq, i) => (
+              <details key={i} className="group rounded-lg border border-slate-200 bg-white">
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-left font-medium text-slate-900">
+                  {faq.q}
+                  <svg className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <p className="px-6 pb-4 text-slate-600">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                { "@type": "Question", name: "Is the free tier really free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required." } },
+                { "@type": "Question", name: "How do clients pay?", acceptedAnswer: { "@type": "Answer", text: "When a client approves a quote, they pay through Stripe Checkout — PCI compliant and encrypted." } },
+                { "@type": "Question", name: "Can I use this on my phone?", acceptedAnswer: { "@type": "Answer", text: "Yes. The entire tool is designed mobile-first for tradespeople on the go." } },
+                { "@type": "Question", name: "What happens when a client approves a quote?", acceptedAnswer: { "@type": "Answer", text: "They pay through Stripe, you get notified, and the quote is marked as paid in your dashboard." } },
+                { "@type": "Question", name: "Do I need a Stripe account?", acceptedAnswer: { "@type": "Answer", text: "Yes, but it's free. You keep 100% minus standard Stripe fees (2.9% + 30¢)." } },
+              ],
+            }),
+          }}
+        />
       </section>
 
       {/* ──────────────── Footer ──────────────── */}
