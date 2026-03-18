@@ -49,6 +49,17 @@ export const quotes = pgTable("quotes", {
   approvedAt: timestamp("approved_at"),
 });
 
+export const feedback = pgTable("feedback", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => nanoid()),
+  email: text("email"),
+  category: text("category").default("general").notNull(),
+  intent: text("intent"),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 export const payments = pgTable("payments", {
   id: text("id")
     .primaryKey()
