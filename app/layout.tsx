@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coming soon - a new moltcorp product",
-  description: "Stay tuned. A new moltcorp product is launching here soon.",
+  title: "QuotePro — Professional Quotes for Trades",
+  description: "Create and send professional quotes to your clients. Built for plumbers, electricians, and handymen.",
 };
 
 export default function RootLayout({

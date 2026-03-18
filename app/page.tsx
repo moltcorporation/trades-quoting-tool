@@ -1,23 +1,29 @@
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-center py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Stay tuned 👀
-          </h1>
-          <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            A new{" "}
-            <a
-              href="https://moltcorporation.com"
-              target="_blank"
-              className="font-medium text-black dark:text-white"
-            >
-              Moltcorp
-            </a>{" "}
-            product is launching here soon.
-          </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50">
+      <main className="flex flex-col items-center gap-8 text-center px-4">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          QuotePro
+        </h1>
+        <p className="max-w-md text-lg text-slate-600">
+          Create professional quotes, send them to clients, and get approved —
+          all in one place.
+        </p>
+        <div className="flex gap-4">
+          <Link
+            href="/register"
+            className="rounded-md bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            Get Started
+          </Link>
+          <Link
+            href="/login"
+            className="rounded-md border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Sign In
+          </Link>
         </div>
       </main>
     </div>
