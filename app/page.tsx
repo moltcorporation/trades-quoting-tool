@@ -8,9 +8,24 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { number: 1, title: "Create your quote", description: "Add line items, labor, and parts in minutes." },
-  { number: 2, title: "Send the link", description: "Text or email a professional quote page to your client." },
-  { number: 3, title: "Client approves & pays", description: "One tap to approve. Payment collected via Stripe." },
+  {
+    number: 1,
+    title: "Create your quote",
+    description: "Add line items, labor, and parts in minutes.",
+    icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+  },
+  {
+    number: 2,
+    title: "Send the link",
+    description: "Text or email a professional quote page to your client.",
+    icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8",
+  },
+  {
+    number: 3,
+    title: "Client approves & pays",
+    description: "One tap to approve. Payment collected via Stripe.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
 ];
 
 const competitors = [
@@ -34,8 +49,24 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen font-sans">
       {/* ──────────────── Hero ──────────────── */}
-      <section className="bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center">
-        <div className="max-w-3xl mx-auto">
+      <section className="relative bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-rule='evenodd'%3E%3Cpath d='M0 0h1v1H0zM20 0h1v1h-1zM0 20h1v1H0zM20 20h1v1h-1z'/%3E%3C/g%3E%3C/svg%3E\")",
+        }} />
+        <div className="relative max-w-3xl mx-auto">
+          {/* Trade icon cluster */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" />
+            </svg>
+            <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <svg className="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+            </svg>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
             Send quotes. Get approvals. Collect payment.
           </h1>
@@ -68,18 +99,27 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400" />
+
       {/* ──────────────── How It Works ──────────────── */}
-      <section className="bg-white px-6 py-20">
+      <section className="bg-slate-50 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-900">How it works</h2>
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {steps.map((step) => (
-              <div key={step.number} className="flex flex-col items-center">
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500 text-slate-900 text-xl font-bold">
-                  {step.number}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
-                <p className="mt-2 text-slate-600">{step.description}</p>
+              <div
+                key={step.number}
+                className="group flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-lg hover:border-amber-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-amber-100 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
+                  </svg>
+                </div>
+                <span className="mt-3 text-xs font-bold text-amber-500 uppercase tracking-wider">Step {step.number}</span>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900">{step.title}</h3>
+                <p className="mt-2 text-sm text-slate-500 text-center">{step.description}</p>
               </div>
             ))}
           </div>
