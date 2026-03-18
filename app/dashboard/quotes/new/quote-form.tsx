@@ -22,6 +22,7 @@ export function QuoteForm() {
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   const subtotalCents = lineItems.reduce(
     (sum, item) => sum + Math.round(item.quantity * item.unitPrice * 100),
@@ -60,6 +61,7 @@ export function QuoteForm() {
 
   async function handleSubmit(status: "draft" | "sent") {
     setError("");
+    setShowUpgrade(false);
 
     if (!clientName.trim()) {
       setError("Client name is required");
@@ -100,7 +102,10 @@ export function QuoteForm() {
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Failed to create quote");
+        if (data.upgrade) {
+          setShowUpgrade(true);
+        }
+        throw new Error(data.message || data.error || "Failed to create quote");
       }
 
       router.push("/dashboard/quotes");
@@ -115,7 +120,15 @@ export function QuoteForm() {
     <div className="space-y-6">
       {error && (
         <div className="rounded-lg bg-red-50 p-3 text-sm text-red-600">
-          {error}
+          <p>{error}</p>
+          {showUpgrade && (
+            <a
+              href="/pricing"
+              className="mt-2 inline-block rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+            >
+              Upgrade to Pro
+            </a>
+          )}
         </div>
       )}
 
