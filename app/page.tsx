@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trades Quoting Tool — Professional Quotes, Approvals & Payments for Tradespeople",
+  title: "Trades Quoting Tool — Professional Quotes & Approvals for Tradespeople",
   description:
-    "Send professional quotes, get client approvals, and collect payments. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
+    "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
 };
 
 const steps = [
@@ -22,8 +22,8 @@ const steps = [
   },
   {
     number: 3,
-    title: "Client approves & pays",
-    description: "One tap to approve. Payment collected via Stripe.",
+    title: "Client approves",
+    description: "One tap to approve. You get notified instantly.",
     icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
   },
 ];
@@ -68,11 +68,11 @@ export default function LandingPage() {
             </svg>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Send quotes. Get approvals. Collect payment.
+            Send quotes. Get approvals. Get to work.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
             Professional quoting for plumbers, electricians, and contractors.
-            Stop texting estimates and chasing payments on Venmo.
+            Stop texting estimates. Send a real quote your clients can approve in one tap.
           </p>
           <Link
             href="/register"
@@ -86,7 +86,7 @@ export default function LandingPage() {
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-            <span>Powered by Stripe</span>
+            <span>Simple &amp; secure</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
@@ -171,7 +171,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-0.5">&#x2713;</span>
-                  Stripe-powered payment collection
+                  Professional quotes clients can approve online
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-0.5">&#x2713;</span>
@@ -353,7 +353,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 font-bold">&#x2713;</span>
-                  Payment collection via Stripe
+                  Approval tracking + notifications
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 font-bold">&#x2713;</span>
@@ -377,11 +377,11 @@ export default function LandingPage() {
           <h2 className="text-3xl font-bold text-slate-900 text-center">Frequently asked questions</h2>
           <div className="mt-12 space-y-6">
             {[
-              { q: "Is the free tier really free?", a: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required. Upgrade to Pro when you need unlimited quotes and payment collection." },
-              { q: "How do clients pay?", a: "When a client approves a quote, they pay through Stripe Checkout — the same secure payment system used by Amazon, Shopify, and millions of businesses. All payments are PCI compliant and encrypted." },
+              { q: "Is the free tier really free?", a: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required. Upgrade to Pro when you need unlimited quotes." },
+              { q: "How do clients approve?", a: "You send them a link. They see a professional quote page with your business name, line items, and total. One tap to approve. You get notified instantly." },
               { q: "Can I use this on my phone?", a: "Yes. The entire tool is designed mobile-first. Create quotes on your phone between jobs, and your clients view and approve quotes on their phones too." },
-              { q: "What happens when a client approves a quote?", a: "They're taken to a Stripe payment page. Once payment is complete, you get notified and the quote is marked as paid in your dashboard." },
-              { q: "Do I need a Stripe account?", a: "Yes, but it's free to create. You keep 100% of your quote amount minus standard Stripe processing fees (2.9% + 30¢). We don't take any additional cut." },
+              { q: "What happens when a client approves a quote?", a: "The quote status updates to 'approved' in your dashboard and you get notified. You handle payment however you prefer — cash, check, Venmo, Zelle, or card on-site." },
+              { q: "How do I collect payment?", a: "However you already do! This tool handles quoting and approvals. Payment happens between you and your client however works best — cash, check, Venmo, or card. We don't take a cut of anything." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-lg border border-slate-200 bg-white">
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-left font-medium text-slate-900">
@@ -401,10 +401,10 @@ export default function LandingPage() {
               "@type": "FAQPage",
               mainEntity: [
                 { "@type": "Question", name: "Is the free tier really free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Create up to 3 active quotes, send them to clients, and get approvals — no credit card required." } },
-                { "@type": "Question", name: "How do clients pay?", acceptedAnswer: { "@type": "Answer", text: "When a client approves a quote, they pay through Stripe Checkout — PCI compliant and encrypted." } },
+                { "@type": "Question", name: "How do clients approve?", acceptedAnswer: { "@type": "Answer", text: "You send them a link. They see a professional quote page and approve with one tap." } },
                 { "@type": "Question", name: "Can I use this on my phone?", acceptedAnswer: { "@type": "Answer", text: "Yes. The entire tool is designed mobile-first for tradespeople on the go." } },
-                { "@type": "Question", name: "What happens when a client approves a quote?", acceptedAnswer: { "@type": "Answer", text: "They pay through Stripe, you get notified, and the quote is marked as paid in your dashboard." } },
-                { "@type": "Question", name: "Do I need a Stripe account?", acceptedAnswer: { "@type": "Answer", text: "Yes, but it's free. You keep 100% minus standard Stripe fees (2.9% + 30¢)." } },
+                { "@type": "Question", name: "What happens when a client approves a quote?", acceptedAnswer: { "@type": "Answer", text: "The quote status updates in your dashboard and you get notified. Payment happens however you prefer." } },
+                { "@type": "Question", name: "How do I collect payment?", acceptedAnswer: { "@type": "Answer", text: "However you already do — cash, check, Venmo, Zelle, or card on-site. We handle quoting and approvals." } },
               ],
             }),
           }}
