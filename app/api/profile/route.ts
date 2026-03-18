@@ -41,10 +41,11 @@ export async function PUT(request: NextRequest) {
   }
 
   const body = await request.json();
-  const { businessName, city, state, tradeType } = body;
+  const { businessName, phone, city, state, tradeType } = body;
 
   const updates: Record<string, string> = {};
   if (businessName !== undefined) updates.businessName = businessName;
+  if (phone !== undefined) updates.phone = phone;
   if (city !== undefined) updates.city = city;
   if (state !== undefined) updates.state = state;
   if (tradeType !== undefined) updates.tradeType = tradeType;
