@@ -23,7 +23,7 @@ async function getStats(): Promise<{
 }
 
 export const metadata: Metadata = {
-  title: "Trades Quoting Tool — Professional Quotes & Approvals for Tradespeople",
+  title: "TradeQuote — Professional Quotes & Approvals for Tradespeople",
   description:
     "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
 };
@@ -144,7 +144,7 @@ export default async function LandingPage() {
             </div>
           ) : (
             <p className="text-center text-slate-400 text-sm">
-              Join the first tradespeople using Trades Quoting Tool
+              Join the first tradespeople using TradeQuote
             </p>
           )}
         </div>
