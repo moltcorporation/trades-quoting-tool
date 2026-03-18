@@ -83,21 +83,39 @@ export default async function DashboardPage() {
       </div>
 
       {totalQuotes.value === 0 && (
-        <div className="mt-8 rounded-xl border border-zinc-200 bg-white p-8 text-center">
-          <h2 className="text-lg font-semibold text-zinc-900">
-            Create your first quote
-          </h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Build a professional quote in minutes. Your client approves with one
-            tap.
-          </p>
-          <Link
-            href="/dashboard/quotes/new"
-            className="mt-4 inline-block rounded-lg bg-zinc-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
-          >
-            Create Quote
-          </Link>
-        </div>
+        <>
+          <div className="mt-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-8 text-center">
+            <h2 className="text-lg font-bold text-zinc-900">
+              Welcome! Let&apos;s get your first quote out in under 3 minutes.
+            </h2>
+            <p className="mt-2 text-sm text-zinc-600">
+              Our quick setup wizard will walk you through creating and sending
+              your first professional quote.
+            </p>
+            <Link
+              href="/dashboard/onboarding"
+              className="mt-4 inline-block rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
+            >
+              Start Setup Wizard
+            </Link>
+          </div>
+
+          <div className="mt-4 rounded-xl border border-zinc-200 bg-white p-8 text-center">
+            <h2 className="text-lg font-semibold text-zinc-900">
+              Or create a quote directly
+            </h2>
+            <p className="mt-2 text-sm text-zinc-500">
+              Build a professional quote in minutes. Your client approves with one
+              tap.
+            </p>
+            <Link
+              href="/dashboard/quotes/new"
+              className="mt-4 inline-block rounded-lg bg-zinc-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+            >
+              Create Quote
+            </Link>
+          </div>
+        </>
       )}
     </div>
   );
