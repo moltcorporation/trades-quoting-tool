@@ -1,6 +1,27 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+async function getStats(): Promise<{
+  users: number;
+  quotesSent: number;
+  quotesApproved: number;
+} | null> {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+      ? process.env.NEXT_PUBLIC_APP_URL
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/stats`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
 export const metadata: Metadata = {
   title: "Trades Quoting Tool — Professional Quotes & Approvals for Tradespeople",
   description:
@@ -45,7 +66,11 @@ const subtotal = quoteLineItems.reduce((sum, item) => sum + item.amount, 0);
 const tax = Math.round(subtotal * 0.08 * 100) / 100;
 const total = subtotal + tax;
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const stats = await getStats();
+  const hasActivity =
+    stats && (stats.users > 0 || stats.quotesSent > 0 || stats.quotesApproved > 0);
+
   return (
     <main className="min-h-screen font-sans">
       {/* ──────────────── Hero ──────────────── */}
@@ -96,6 +121,32 @@ export default function LandingPage() {
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span>No long-term contracts</span>
           </div>
+        </div>
+      </section>
+
+      {/* ──────────────── Stats Counter ──────────────── */}
+      <section className="bg-slate-800 px-6 py-12">
+        <div className="max-w-4xl mx-auto">
+          {hasActivity ? (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                <p className="text-3xl font-bold text-white">{stats.users}</p>
+                <p className="mt-1 text-sm text-slate-400">Tradespeople</p>
+              </div>
+              <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                <p className="text-3xl font-bold text-white">{stats.quotesSent}</p>
+                <p className="mt-1 text-sm text-slate-400">Quotes Sent</p>
+              </div>
+              <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                <p className="text-3xl font-bold text-white">{stats.quotesApproved}</p>
+                <p className="mt-1 text-sm text-slate-400">Approvals</p>
+              </div>
+            </div>
+          ) : (
+            <p className="text-center text-slate-400 text-sm">
+              Join the first tradespeople using Trades Quoting Tool
+            </p>
+          )}
         </div>
       </section>
 
