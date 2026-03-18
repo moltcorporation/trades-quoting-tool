@@ -4,6 +4,7 @@ import { db } from "@/db";
 import { quotes } from "@/db/schema";
 import { getSession } from "@/lib/auth";
 import { eq, desc } from "drizzle-orm";
+import { MarkPaidButton } from "./mark-paid-button";
 
 const statusConfig: Record<string, { label: string; classes: string }> = {
   draft: { label: "Draft", classes: "bg-zinc-100 text-zinc-600" },
@@ -87,6 +88,9 @@ export default async function QuotesPage() {
                       >
                         {config.label}
                       </span>
+                      {quote.status === "approved" && (
+                        <MarkPaidButton quoteId={quote.id} />
+                      )}
                       <span className="text-xs text-zinc-400">
                         {formatDate(quote.createdAt)}
                       </span>
