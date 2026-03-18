@@ -1,13 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
-import { quotes } from "@/db/schema";
+import { quotes, users } from "@/db/schema";
 import { getSession } from "@/lib/auth";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, and, inArray } from "drizzle-orm";
+import { canCreateQuote } from "@/lib/plans";
 
 export async function POST(request: NextRequest) {
   const session = await getSession(request);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const [user] = await db
+    .select({ plan: users.plan })
+    .from(users)
+    .where(eq(users.id, session.userId));
+
+  if (!user) {
+    return NextResponse.json({ error: "User not found" }, { status: 401 });
+  }
+
+  const activeQuotes = await db
+    .select({ id: quotes.id })
+    .from(quotes)
+    .where(
+      and(
+        eq(quotes.userId, session.userId),
+        inArray(quotes.status, ["draft", "sent"])
+      )
+    );
+
+  if (!canCreateQuote(user.plan, activeQuotes.length)) {
+    return NextResponse.json(
+      {
+        error: "Free plan limit reached",
+        message: "You've reached the 3 active quote limit on the free plan. Upgrade to Pro for unlimited quotes.",
+        upgrade: true,
+      },
+      { status: 403 }
+    );
   }
 
   const body = await request.json();
