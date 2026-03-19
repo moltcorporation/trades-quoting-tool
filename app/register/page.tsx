@@ -43,6 +43,9 @@ export default function RegisterPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 px-4">
       <div className="w-full max-w-sm">
+        <div className="mb-6">
+          <span className="text-2xl font-bold text-amber-500">TradeQuote</span>
+        </div>
         <h1 className="text-2xl font-bold text-zinc-900">Create your account</h1>
         <p className="mt-1 text-sm text-zinc-500">
           Start sending professional quotes in minutes.
@@ -74,7 +77,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+            className="w-full rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-amber-600 disabled:opacity-50"
           >
             {loading ? "Creating account..." : "Create Account"}
           </button>
