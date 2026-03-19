@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 
+import { TrustBar } from "@/lib/components/TrustBar";
 async function getStats(): Promise<{
   users: number;
   quotesSent: number;
@@ -480,6 +481,9 @@ export default async function LandingPage() {
           </nav>
         </div>
       </footer>
+
+      {/* Trust Bar */}
+      <div className="my-12"><TrustBar /></div>
     </main>
   );
 }
