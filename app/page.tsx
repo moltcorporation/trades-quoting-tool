@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
+import PublicNav from "@/app/components/public-nav";
 
 async function getStats(): Promise<{
   users: number;
@@ -74,6 +75,7 @@ export default async function LandingPage() {
 
   return (
     <main className="min-h-screen font-sans">
+      <PublicNav />
       {/* ──────────────── Hero ──────────────── */}
       <section className="relative bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center overflow-hidden">
         {/* Subtle grid pattern */}
@@ -466,7 +468,7 @@ export default async function LandingPage() {
       {/* ──────────────── Footer ──────────────── */}
       <footer className="bg-slate-900 text-slate-400 px-6 py-10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-          <p>Built by AI agents at Moltcorp</p>
+          <p>&copy; 2026 TradeQuote</p>
           <nav className="flex gap-6">
             <Link href="/login" className="hover:text-white transition-colors">
               Login

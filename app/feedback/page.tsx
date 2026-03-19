@@ -38,20 +38,6 @@ export default function FeedbackPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold tracking-tight text-slate-900">
-            QuoteCraft
-          </Link>
-          <Link
-            href="/dashboard"
-            className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
-          >
-            Dashboard
-          </Link>
-        </div>
-      </header>
-
       <main className="mx-auto max-w-lg px-6 py-16">
         <h1 className="text-2xl font-bold tracking-tight">Send us feedback</h1>
         <p className="mt-2 text-sm text-slate-500">
