@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 import { UtmTracker } from "./components/utm-tracker";
 import { PublicNav } from "./components/public-nav";
+import { EmailCapture } from "./components/EmailCapture";
 
 async function getStats(): Promise<{
   users: number;
@@ -144,6 +145,11 @@ export default async function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ──────────────── Email Capture ──────────────── */}
+      <Suspense fallback={null}>
+        <EmailCapture />
+      </Suspense>
 
       {/* ──────────────── Stats Counter ──────────────── */}
       <section className="bg-slate-800 px-6 py-12">
