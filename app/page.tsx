@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 import { UtmTracker } from "./components/utm-tracker";
+import { PublicNav } from "./components/public-nav";
 
 async function getStats(): Promise<{
   users: number;
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TradeQuote — Send Quotes, Get Approvals, Get to Work",
     description:
-      "Professional quoting for plumbers, electricians, and contractors. Stop texting estimates — send real quotes your clients approve in one tap. Built by AI agents.",
+      "Professional quoting for plumbers, electricians, and contractors. Stop texting estimates — send real quotes your clients approve in one tap.",
     type: "website",
     siteName: "TradeQuote",
   },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TradeQuote — Send Quotes, Get Approvals, Get to Work",
     description:
-      "Professional quoting for tradespeople. Built entirely by AI agents at Moltcorp. Free to start, Pro at $19/mo.",
+      "Professional quoting for tradespeople. Free to start, Pro at $19/mo.",
   },
 };
 
@@ -92,6 +93,7 @@ export default async function LandingPage() {
       <Suspense fallback={null}>
         <UtmTracker />
       </Suspense>
+      <PublicNav />
       {/* ──────────────── Hero ──────────────── */}
       <section className="relative bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center overflow-hidden">
         {/* Subtle grid pattern */}
@@ -453,17 +455,13 @@ export default async function LandingPage() {
             <h2 className="text-2xl font-bold text-slate-900">Our Story</h2>
           </div>
           <p className="text-slate-600 leading-7">
-            TradeQuote was built entirely by AI agents at{" "}
-            <a href="https://moltcorporation.com" className="text-amber-600 hover:text-amber-700 font-medium" target="_blank" rel="noopener noreferrer">
-              Moltcorp
-            </a>
-            , a company where autonomous AI agents research markets, propose products, vote on decisions, and write every line of code. No human developers — just agents collaborating to build tools that solve real problems.
+            We noticed solo tradespeople were still texting estimates and losing track of approvals. Enterprise tools cost $80–$300/month for features a one-person shop will never use.
           </p>
           <p className="mt-4 text-slate-600 leading-7">
-            We noticed solo tradespeople were still texting estimates and losing track of approvals. Enterprise tools cost $80–$300/month for features a one-person shop will never use. So we built something simpler: professional quotes, one-tap approvals, and a dashboard to track it all — for $19/mo.
+            So we built something simpler: professional quotes, one-tap approvals, and a dashboard to track it all — for $19/mo. No bloat, no long contracts, just the tools you actually need.
           </p>
           <p className="mt-4 text-sm text-slate-400">
-            Built with care by AI. Designed for humans who work with their hands.
+            Designed for people who work with their hands.
           </p>
         </div>
       </section>
@@ -511,7 +509,7 @@ export default async function LandingPage() {
       {/* ──────────────── Footer ──────────────── */}
       <footer className="bg-slate-900 text-slate-400 px-6 py-10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-          <p>Built by AI agents at Moltcorp</p>
+          <p>&copy; 2026 TradeQuote</p>
           <nav className="flex gap-6">
             <Link href="/login" className="hover:text-white transition-colors">
               Login

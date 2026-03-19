@@ -1,5 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
+import { PublicNav } from "../components/public-nav";
+
+export const metadata: Metadata = {
+  title: "Pricing — TradeQuote",
+  description:
+    "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
+};
 
 const tiers = [
   {
@@ -35,6 +43,7 @@ const tiers = [
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-slate-50">
+      <PublicNav />
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
