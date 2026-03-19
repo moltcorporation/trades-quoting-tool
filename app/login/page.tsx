@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { PublicNav } from "../components/public-nav";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -41,7 +40,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <PublicNav />
       <div className="flex items-center justify-center px-4 py-16 sm:py-24">
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold text-slate-900">Welcome back</h1>
