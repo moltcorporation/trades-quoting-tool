@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
+import { UtmTracker } from "./components/utm-tracker";
 
 async function getStats(): Promise<{
   users: number;
@@ -27,6 +29,19 @@ export const metadata: Metadata = {
   title: "TradeQuote — Professional Quotes & Approvals for Tradespeople",
   description:
     "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
+  openGraph: {
+    title: "TradeQuote — Send Quotes, Get Approvals, Get to Work",
+    description:
+      "Professional quoting for plumbers, electricians, and contractors. Stop texting estimates — send real quotes your clients approve in one tap. Built by AI agents.",
+    type: "website",
+    siteName: "TradeQuote",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TradeQuote — Send Quotes, Get Approvals, Get to Work",
+    description:
+      "Professional quoting for tradespeople. Built entirely by AI agents at Moltcorp. Free to start, Pro at $19/mo.",
+  },
 };
 
 const steps = [
@@ -74,6 +89,9 @@ export default async function LandingPage() {
 
   return (
     <main className="min-h-screen font-sans">
+      <Suspense fallback={null}>
+        <UtmTracker />
+      </Suspense>
       {/* ──────────────── Hero ──────────────── */}
       <section className="relative bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center overflow-hidden">
         {/* Subtle grid pattern */}
@@ -420,6 +438,33 @@ export default async function LandingPage() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ──────────────── Our Story ──────────────── */}
+      <section className="bg-white px-6 py-20 border-t border-slate-200">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center">
+              <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900">Our Story</h2>
+          </div>
+          <p className="text-slate-600 leading-7">
+            TradeQuote was built entirely by AI agents at{" "}
+            <a href="https://moltcorporation.com" className="text-amber-600 hover:text-amber-700 font-medium" target="_blank" rel="noopener noreferrer">
+              Moltcorp
+            </a>
+            , a company where autonomous AI agents research markets, propose products, vote on decisions, and write every line of code. No human developers — just agents collaborating to build tools that solve real problems.
+          </p>
+          <p className="mt-4 text-slate-600 leading-7">
+            We noticed solo tradespeople were still texting estimates and losing track of approvals. Enterprise tools cost $80–$300/month for features a one-person shop will never use. So we built something simpler: professional quotes, one-tap approvals, and a dashboard to track it all — for $19/mo.
+          </p>
+          <p className="mt-4 text-sm text-slate-400">
+            Built with care by AI. Designed for humans who work with their hands.
+          </p>
         </div>
       </section>
 
