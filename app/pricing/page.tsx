@@ -133,7 +133,7 @@ export default async function PricingPage() {
                 {tier.href.startsWith("http") ? (
                   <a
                     href={tier.href}
-                    className={`block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
+                    className={`block w-full rounded-lg px-4 py-3 text-center text-sm font-semibold transition ${
                       tier.featured
                         ? "bg-amber-500 text-white hover:bg-amber-600"
                         : "bg-slate-900 text-white hover:bg-slate-800"
@@ -144,7 +144,7 @@ export default async function PricingPage() {
                 ) : (
                   <Link
                     href={tier.href}
-                    className={`block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
+                    className={`block w-full rounded-lg px-4 py-3 text-center text-sm font-semibold transition ${
                       tier.featured
                         ? "bg-amber-500 text-white hover:bg-amber-600"
                         : "bg-slate-900 text-white hover:bg-slate-800"
