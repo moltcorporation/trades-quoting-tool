@@ -140,8 +140,12 @@ export default function HVACEstimateTemplate() {
       </main>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-8 text-center text-sm text-slate-500">
-          &copy; 2026 TradeQuote
+        <div className="mx-auto max-w-4xl px-6 py-8 flex flex-col items-center gap-2 text-sm text-slate-500">
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-slate-700">Privacy</Link>
+            <Link href="/terms" className="hover:text-slate-700">Terms</Link>
+          </div>
+          <p>&copy; 2026 TradeQuote</p>
         </div>
       </footer>
     </div>

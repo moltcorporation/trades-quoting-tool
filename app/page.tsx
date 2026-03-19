@@ -523,6 +523,12 @@ export default async function LandingPage() {
             <Link href="/feedback" className="hover:text-white transition-colors">
               Feedback
             </Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
+            </Link>
           </nav>
         </div>
       </footer>
