@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PublicNav } from "@/app/components/public-nav";
 
 export const metadata: Metadata = {
   title: "Free HVAC Estimate Template | TradeQuote",
@@ -50,12 +51,7 @@ export default function HVACEstimateTemplate() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold tracking-tight">TradeQuote</Link>
-          <Link href="/register" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800">Create free estimate</Link>
-        </div>
-      </header>
+      <PublicNav />
 
       <main className="mx-auto max-w-3xl px-6 py-16">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">

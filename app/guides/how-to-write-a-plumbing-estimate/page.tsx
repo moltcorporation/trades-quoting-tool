@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PublicNav } from "@/app/components/public-nav";
 
 export const metadata: Metadata = {
   title: "How to Write a Plumbing Estimate: Template + Tips | QuoteTrade",
@@ -105,19 +106,7 @@ export default function PlumbingEstimateGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <nav className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
-          </Link>
-          <Link
-            href="/register"
-            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
-          >
-            Get Started
-          </Link>
-        </div>
-      </nav>
+      <PublicNav />
 
       <main className="mx-auto max-w-3xl px-6 py-16">
         <div className="mb-4 text-sm font-medium text-blue-600">Guide</div>
