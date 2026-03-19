@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free Estimate Template for Plumbers & Electricians | QuoteTrade",
   description:
-    "Spreadsheet estimates are free but unprofessional. Send client-facing quotes with approve buttons and payment collection for just $19/mo.",
+    "Spreadsheet estimates are free but unprofessional. Send client-facing quotes with approve buttons and status tracking for just $19/mo.",
   keywords: [
     "free estimate template plumber",
     "electrician quote template",
@@ -22,7 +22,7 @@ const jsonLd = {
       name: "Can I use a spreadsheet to send estimates?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can, but spreadsheet estimates lack a client-facing approval page, payment collection, and status tracking. You'll end up emailing PDFs and chasing payments manually.",
+        text: "You can, but spreadsheet estimates lack a client-facing approval page, status tracking, and a professional appearance. You'll end up emailing PDFs and chasing approvals manually.",
       },
     },
     {
@@ -30,7 +30,7 @@ const jsonLd = {
       name: "What's wrong with emailing a PDF quote?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "PDF quotes create a disconnected workflow: you email a file, wait for a reply, then chase payment separately. There's no approve button, no payment link, and no way to track if the client even opened it.",
+        text: "PDF quotes create a disconnected workflow: you email a file, wait for a reply, and have no way to track if the client even opened it. There's no approve button, no status tracking, and no professional client-facing page.",
       },
     },
     {
@@ -46,7 +46,7 @@ const jsonLd = {
       name: "How do tradespeople get paid faster?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The fastest way to get paid is to send a professional quote with an approve-and-pay link. When clients can approve and pay in one click, you eliminate the back-and-forth that delays payment.",
+        text: "The fastest way to get paid is to send a professional quote with a one-tap approve link. When clients can approve instantly, you eliminate the back-and-forth that delays getting started on the job.",
       },
     },
     {
@@ -54,7 +54,7 @@ const jsonLd = {
       name: "Do clients take you more seriously with a professional quote?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. A professional-looking quote with your business name, clear line items, and an easy payment option builds trust and signals that you run a real business — not a side hustle.",
+        text: "Yes. A professional-looking quote with your business name, clear line items, and a simple approval process builds trust and signals that you run a real business — not a side hustle.",
       },
     },
   ],
@@ -91,8 +91,8 @@ export default function SpreadsheetsComparison() {
         </h1>
         <p className="mt-4 text-lg leading-8 text-slate-600">
           Yes, spreadsheets are free. But free comes with a cost: no
-          client-facing page, no approve button, no payment collection, no
-          status tracking, and an unprofessional look that undersells your work.
+          client-facing page, no approve button, no status tracking, and an
+          unprofessional look that undersells your work.
         </p>
 
         <section className="mt-12">
@@ -177,7 +177,7 @@ export default function SpreadsheetsComparison() {
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-xs font-medium text-green-600">
                     5
                   </span>
-                  <span>Client pays through the same link</span>
+                  <span>Track status from your dashboard</span>
                 </li>
               </ol>
             </div>
@@ -199,8 +199,8 @@ export default function SpreadsheetsComparison() {
                 desc: "Clients have to reply to an email to say \"yes.\" That means delays, lost emails, and uncertainty about whether you have the green light.",
               },
               {
-                title: "No payment collection",
-                desc: "After the job, you're sending a Venmo request or asking for a check. Payment collection is completely separate from the quote.",
+                title: "No payment tracking",
+                desc: "You have no way to track whether a job has been paid. Payment status is completely separate from the quote.",
               },
               {
                 title: "No status tracking",
