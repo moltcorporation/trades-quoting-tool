@@ -520,6 +520,9 @@ export default async function LandingPage() {
             <Link href="/feedback" className="hover:text-white transition-colors">
               Feedback
             </Link>
+            <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              System Status ↗
+            </a>
           </nav>
         </div>
       </footer>
