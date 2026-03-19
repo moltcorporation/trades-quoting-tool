@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Housecall Pro Alternative — Simple Quoting for Solo Trades",
   description:
-    "Housecall Pro starts at $79/mo with features you'll never use. QuoteTrade gives you quote→approve→pay simplicity for $19/mo.",
+    "Housecall Pro starts at $79/mo with features you'll never use. QuoteTrade gives you quote→approve→track simplicity for $19/mo.",
   keywords: [
     "Housecall Pro alternative",
     "Housecall Pro pricing",
@@ -38,7 +38,7 @@ const jsonLd = {
       name: "What's the simplest alternative to Housecall Pro?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "QuoteTrade focuses on the core workflow solo tradespeople need: create a quote, send it to your client, let them approve and pay online. No bloat, no complexity, just $19/month.",
+        text: "QuoteTrade focuses on the core workflow solo tradespeople need: create a quote, send it to your client, and let them approve online. No bloat, no complexity, just $19/month.",
       },
     },
     {
@@ -91,7 +91,7 @@ function XIcon() {
 export default function HousecallProComparison() {
   const features = [
     { name: "Professional quoting", us: true, them: true, need: true },
-    { name: "Online payments", us: true, them: true, need: true },
+    { name: "Payment tracking", us: true, them: true, need: true },
     { name: "Client approval links", us: true, them: true, need: true },
     { name: "Quote status tracking", us: true, them: true, need: true },
     { name: "Dispatching & scheduling", us: false, them: true, need: false },
@@ -224,7 +224,7 @@ export default function HousecallProComparison() {
               <ul className="mt-4 space-y-2 text-sm text-slate-600">
                 <li>Everything you need, nothing you don&apos;t</li>
                 <li>No contracts — cancel anytime</li>
-                <li>Quote → Approve → Pay workflow</li>
+                <li>Quote → Approve → Track workflow</li>
                 <li>Send quotes in under 2 minutes</li>
               </ul>
             </div>
@@ -252,7 +252,7 @@ export default function HousecallProComparison() {
             Stop paying for features you&apos;ll never use.
           </h2>
           <p className="mt-2 text-lg text-slate-300">
-            Quote. Approve. Get paid. That&apos;s the whole product.
+            Quote. Approve. Done. That&apos;s the whole product.
           </p>
           <Link
             href="/register"

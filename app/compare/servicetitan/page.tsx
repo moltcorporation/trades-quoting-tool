@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "ServiceTitan Alternative for Solo Tradespeople | QuoteTrade",
   description:
-    "ServiceTitan costs $300+/mo and is built for large companies. QuoteTrade gives solo tradespeople professional quoting and payments for just $19/mo.",
+    "ServiceTitan costs $300+/mo and is built for large companies. QuoteTrade gives solo tradespeople professional quoting and approval tracking for just $19/mo.",
   keywords: [
     "ServiceTitan alternative",
     "ServiceTitan for small business",
@@ -30,7 +30,7 @@ const jsonLd = {
       name: "What is the cheapest alternative to ServiceTitan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "QuoteTrade offers professional quoting and payment collection for solo tradespeople at $19/month — a fraction of ServiceTitan's $300+/month price tag.",
+        text: "QuoteTrade offers professional quoting and approval tracking for solo tradespeople at $19/month — a fraction of ServiceTitan's $300+/month price tag.",
       },
     },
     {
@@ -38,7 +38,7 @@ const jsonLd = {
       name: "Can I send professional quotes without ServiceTitan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. QuoteTrade lets you create, send, and track professional quotes in minutes. Clients can approve and pay online without you needing enterprise-level software.",
+        text: "Yes. QuoteTrade lets you create, send, and track professional quotes in minutes. Clients can approve online without you needing enterprise-level software.",
       },
     },
     {
@@ -46,15 +46,15 @@ const jsonLd = {
       name: "What features does a solo tradesperson actually need?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most solo tradespeople need three things: a way to send professional-looking quotes, a way for clients to approve them, and a way to collect payment. You don't need dispatching, fleet GPS, or a full CRM.",
+        text: "Most solo tradespeople need three things: a way to send professional-looking quotes, a way for clients to approve them, and a way to track job status. You don't need dispatching, fleet GPS, or a full CRM.",
       },
     },
     {
       "@type": "Question",
-      name: "Does QuoteTrade handle payments?",
+      name: "Does QuoteTrade track quote status?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. When your client approves a quote, they can pay directly through the quote link. No chasing invoices, no awkward payment conversations.",
+        text: "Yes. You can see which quotes are pending, approved, or completed from your dashboard. Clients approve with one tap, and you get notified instantly.",
       },
     },
   ],
@@ -99,7 +99,7 @@ function XIcon() {
 export default function ServiceTitanComparison() {
   const features = [
     { name: "Professional quoting", us: true, them: true, need: true },
-    { name: "Online payments", us: true, them: true, need: true },
+    { name: "Payment tracking", us: true, them: true, need: true },
     { name: "Client approval flow", us: true, them: true, need: true },
     { name: "Quote status tracking", us: true, them: true, need: true },
     { name: "Multi-crew scheduling", us: false, them: true, need: false },
