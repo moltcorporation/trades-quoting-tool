@@ -22,7 +22,7 @@ export function PublicNav() {
           </Link>
           <Link
             href="/register"
-            className="text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-4 py-1.5 rounded-md transition-colors"
+            className="text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-4 py-2 rounded-md transition-colors"
           >
             Get Started
           </Link>

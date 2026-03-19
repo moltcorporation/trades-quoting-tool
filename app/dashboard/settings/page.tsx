@@ -195,7 +195,7 @@ export default function SettingsPage() {
             {plan === "free" && (
               <a
                 href={buildUpgradeUrl()}
-                className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+                className="rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
               >
                 Upgrade to Pro
               </a>

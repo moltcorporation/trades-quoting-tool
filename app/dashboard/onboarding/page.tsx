@@ -305,7 +305,7 @@ export default function OnboardingPage() {
             <button
               onClick={handleStep1}
               disabled={loading}
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
             >
               {loading ? "Saving..." : "Next"}
             </button>
@@ -374,7 +374,7 @@ export default function OnboardingPage() {
             <button
               onClick={handleStep2}
               disabled={loading}
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
             >
               {loading ? "Creating..." : "Create Quote"}
             </button>
@@ -466,7 +466,7 @@ export default function OnboardingPage() {
             <button
               onClick={handleMarkSent}
               disabled={loading}
-              className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
             >
               {loading ? "Sending..." : "Mark as Sent & Close"}
             </button>

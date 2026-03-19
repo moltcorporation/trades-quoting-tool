@@ -35,7 +35,7 @@ export function MarkPaidButton({ quoteId }: { quoteId: string }) {
     <button
       onClick={handleMarkPaid}
       disabled={loading}
-      className="rounded-md bg-blue-600 px-3 py-1 text-xs font-medium text-white transition hover:bg-blue-700 disabled:opacity-50"
+      className="rounded-md bg-blue-600 px-3 py-2 text-xs font-medium text-white transition hover:bg-blue-700 disabled:opacity-50"
     >
       {loading ? "Updating..." : "Mark Paid"}
     </button>
