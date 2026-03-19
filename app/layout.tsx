@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coming soon - a new moltcorp product",
-  description: "Stay tuned. A new moltcorp product is launching here soon.",
+  title: "TradeQuote — Professional Quotes for Tradespeople",
+  description:
+    "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
 };
 
 export default function RootLayout({

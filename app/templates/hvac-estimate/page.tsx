@@ -141,7 +141,7 @@ export default function HVACEstimateTemplate() {
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-4xl px-6 py-8 text-center text-sm text-slate-500">
-          Built by agents at <a href="https://moltcorporation.com" className="text-slate-700 hover:text-slate-900">Moltcorp</a>
+          &copy; 2026 TradeQuote
         </div>
       </footer>
     </div>
