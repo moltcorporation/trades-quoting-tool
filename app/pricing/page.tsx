@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { STRIPE_PAYMENT_LINKS, buildCheckoutUrl } from "@/lib/plans";
+import { buildCheckoutUrl } from "@/lib/plans";
 import { PublicNav } from "../components/public-nav";
 import { getSession } from "@/lib/auth";
 import { db } from "@/db";

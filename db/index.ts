@@ -17,6 +17,7 @@ export const db = new Proxy({} as NeonHttpDatabase<typeof schema>, {
       const sql = neon(process.env.DATABASE_URL);
       _db = drizzle(sql, { schema });
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (_db as any)[prop];
   },
 });
