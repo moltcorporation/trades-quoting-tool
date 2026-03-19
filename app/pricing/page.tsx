@@ -1,7 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
+import { STRIPE_PAYMENT_LINKS, buildCheckoutUrl } from "@/lib/plans";
 import { PublicNav } from "../components/public-nav";
+import { getSession } from "@/lib/auth";
+import { db } from "@/db";
+import { users } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 export const metadata: Metadata = {
   title: "Pricing — TradeQuote",
@@ -9,38 +13,56 @@ export const metadata: Metadata = {
     "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
 };
 
-const tiers = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "forever",
-    description: "Get started with the basics",
-    features: [
-      "3 active quotes at a time",
-      "Quote builder",
-      "Client approval page",
-    ],
-    cta: "Get Started",
-    href: "/register",
-    featured: false,
-  },
-  {
-    name: "Pro",
-    price: "$19",
-    period: "/mo",
-    description: "Everything you need to grow",
-    features: [
-      "Unlimited quotes",
-      "Payment tracking",
-      "Priority support",
-    ],
-    cta: "Upgrade to Pro",
-    href: STRIPE_PAYMENT_LINKS.pro_monthly,
-    featured: true,
-  },
-];
+export default async function PricingPage() {
+  // If user is logged in, prefill email on Stripe links
+  let userEmail: string | undefined;
+  try {
+    const session = await getSession();
+    if (session) {
+      const [user] = await db
+        .select({ email: users.email })
+        .from(users)
+        .where(eq(users.id, session.userId))
+        .limit(1);
+      userEmail = user?.email;
+    }
+  } catch {
+    // Not logged in — no prefill
+  }
 
-export default function PricingPage() {
+  const proMonthlyUrl = buildCheckoutUrl("pro_monthly", userEmail);
+
+  const tiers = [
+    {
+      name: "Free",
+      price: "$0",
+      period: "forever",
+      description: "Get started with the basics",
+      features: [
+        "3 active quotes at a time",
+        "Quote builder",
+        "Client approval page",
+      ],
+      cta: "Get Started",
+      href: "/register",
+      featured: false,
+    },
+    {
+      name: "Pro",
+      price: "$19",
+      period: "/mo",
+      description: "Everything you need to grow",
+      features: [
+        "Unlimited quotes",
+        "Payment tracking",
+        "Priority support",
+      ],
+      cta: "Upgrade to Pro",
+      href: proMonthlyUrl,
+      featured: true,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-slate-50">
       <PublicNav />

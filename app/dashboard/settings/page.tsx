@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 
 const TRADE_TYPES = [
   "Plumber",
@@ -23,6 +24,7 @@ export default function SettingsPage() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [tradeType, setTradeType] = useState("");
+  const [email, setEmail] = useState("");
   const [plan, setPlan] = useState("free");
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">(
     "idle"
@@ -30,19 +32,29 @@ export default function SettingsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/profile")
-      .then((res) => res.json())
-      .then((data) => {
-        setBusinessName(data.businessName || "");
-        setPhone(data.phone || "");
-        setCity(data.city || "");
-        setState(data.state || "");
-        setTradeType(data.tradeType || "");
-        setPlan(data.plan || "free");
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    // Load profile and sync Pro status in parallel
+    Promise.all([
+      fetch("/api/profile").then((res) => res.json()),
+      fetch("/api/pro/sync", { method: "POST" }).then((res) => res.json()).catch(() => null),
+    ]).then(([data, sync]) => {
+      setBusinessName(data.businessName || "");
+      setPhone(data.phone || "");
+      setCity(data.city || "");
+      setState(data.state || "");
+      setTradeType(data.tradeType || "");
+      setEmail(data.email || "");
+      setPlan(sync?.plan || data.plan || "free");
+      setLoading(false);
+    }).catch(() => setLoading(false));
   }, []);
+
+  function buildUpgradeUrl() {
+    const base = STRIPE_PAYMENT_LINKS.pro_monthly;
+    if (email) {
+      return `${base}?prefilled_email=${encodeURIComponent(email)}`;
+    }
+    return base;
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -167,7 +179,7 @@ export default function SettingsPage() {
 
         <div className="rounded-xl border border-zinc-200 bg-white p-5 sm:p-6">
           <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-zinc-500">
-            Plan
+            Plan & Billing
           </h2>
           <div className="flex items-center justify-between">
             <div>
@@ -182,7 +194,7 @@ export default function SettingsPage() {
             </div>
             {plan === "free" && (
               <a
-                href="/pricing"
+                href={buildUpgradeUrl()}
                 className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
               >
                 Upgrade to Pro

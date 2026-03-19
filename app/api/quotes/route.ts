@@ -3,7 +3,7 @@ import { db } from "@/db";
 import { quotes, users } from "@/db/schema";
 import { getSession } from "@/lib/auth";
 import { eq, desc, and, inArray } from "drizzle-orm";
-import { canCreateQuote } from "@/lib/plans";
+import { canCreateQuote, checkProAccess } from "@/lib/plans";
 
 export async function POST(request: NextRequest) {
   const session = await getSession(request);
@@ -12,12 +12,29 @@ export async function POST(request: NextRequest) {
   }
 
   const [user] = await db
-    .select({ plan: users.plan })
+    .select({ plan: users.plan, email: users.email })
     .from(users)
     .where(eq(users.id, session.userId));
 
   if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 401 });
+  }
+
+  // Check Pro status via Moltcorp API and sync if needed
+  const isPro = await checkProAccess(user.email);
+  const effectivePlan = isPro ? "pro" : user.plan;
+
+  // Sync plan to DB if it changed
+  if (isPro && user.plan !== "pro") {
+    await db
+      .update(users)
+      .set({ plan: "pro" })
+      .where(eq(users.id, session.userId));
+  } else if (!isPro && user.plan === "pro") {
+    await db
+      .update(users)
+      .set({ plan: "free" })
+      .where(eq(users.id, session.userId));
   }
 
   const activeQuotes = await db
@@ -30,7 +47,7 @@ export async function POST(request: NextRequest) {
       )
     );
 
-  if (!canCreateQuote(user.plan, activeQuotes.length)) {
+  if (!canCreateQuote(effectivePlan, activeQuotes.length)) {
     return NextResponse.json(
       {
         error: "Free plan limit reached",

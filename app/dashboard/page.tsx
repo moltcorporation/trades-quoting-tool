@@ -6,6 +6,7 @@ import { users, quotes } from "@/db/schema";
 import { eq, count, and } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { checkProAccess } from "@/lib/plans";
 
 export default async function DashboardPage() {
   const session = await getSession();
@@ -18,6 +19,17 @@ export default async function DashboardPage() {
     .limit(1);
 
   if (!user) redirect("/login");
+
+  // Sync Pro status from Moltcorp API on dashboard load
+  const isPro = await checkProAccess(user.email);
+  const expectedPlan = isPro ? "pro" : "free";
+  if (user.plan !== expectedPlan) {
+    await db
+      .update(users)
+      .set({ plan: expectedPlan })
+      .where(eq(users.id, session.userId));
+    user.plan = expectedPlan;
+  }
 
   const [totalQuotes] = await db
     .select({ value: count() })
