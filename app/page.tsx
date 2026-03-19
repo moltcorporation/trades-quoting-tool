@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 
 async function getStats(): Promise<{
   users: number;
@@ -412,7 +413,7 @@ export default async function LandingPage() {
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/cNi4gz7BN2pX8HzfeQ3Nm0a"
+                href={STRIPE_PAYMENT_LINKS.pro_monthly}
                 className="mt-8 block text-center bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-3 rounded-lg transition-colors"
               >
                 Start Pro

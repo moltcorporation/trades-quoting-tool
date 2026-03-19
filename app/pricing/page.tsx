@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
 
 const tiers = [
   {
@@ -26,7 +27,7 @@ const tiers = [
       "Priority support",
     ],
     cta: "Upgrade to Pro",
-    href: "https://buy.stripe.com/00w8wP7BN0hP4rjeaM3Nm0f",
+    href: STRIPE_PAYMENT_LINKS.pro_monthly,
     featured: true,
   },
 ];

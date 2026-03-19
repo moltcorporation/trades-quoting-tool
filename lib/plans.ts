@@ -6,13 +6,13 @@ export const PLAN_LIMITS: Record<Plan, { maxActiveQuotes: number; label: string 
 };
 
 export const STRIPE_PAYMENT_LINKS: Record<string, string> = {
-  pro_monthly: "https://buy.stripe.com/cNi4gz7BN2pX8HzfeQ3Nm0a",
-  pro_annual: "https://buy.stripe.com/14A28r09lc0x2jbaYA3Nm0d",
+  pro_monthly: "https://buy.stripe.com/00w8wP7BN0hP4rjeaM3Nm0f",
+  pro_annual: "https://buy.stripe.com/4gMcN56xJd4B2jbaYA3Nm0e",
 };
 
 export const STRIPE_PAYMENT_LINK_IDS: Record<string, string> = {
-  pro_monthly: "plink_1TCLoeDT8EiLsMQhjBQaTkVu",
-  pro_annual: "plink_1TCLp7DT8EiLsMQhRuGzGZVS",
+  pro_monthly: "plink_1TCLyVDT8EiLsMQhD88O8ZU2",
+  pro_annual: "plink_1TCLyNDT8EiLsMQhaLqRjqpI",
 };
 
 export function canCreateQuote(plan: string, activeQuoteCount: number): boolean {
