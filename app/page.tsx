@@ -90,10 +90,10 @@ export default async function LandingPage() {
 
   return (
     <main className="min-h-screen font-sans">
+      <PublicNav />
       <Suspense fallback={null}>
         <UtmTracker />
       </Suspense>
-      <PublicNav />
       {/* ──────────────── Hero ──────────────── */}
       <section className="relative bg-slate-900 text-slate-50 px-6 py-24 md:py-32 text-center overflow-hidden">
         {/* Subtle grid pattern */}
