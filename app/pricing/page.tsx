@@ -43,6 +43,9 @@ export default function PricingPage() {
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-600">
             Start free and upgrade when you need more.
           </p>
+          <p className="mt-2 text-sm text-slate-500">
+            No setup fees. No contracts. Cancel anytime.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -51,12 +54,12 @@ export default function PricingPage() {
               key={tier.name}
               className={`relative rounded-2xl border p-8 ${
                 tier.featured
-                  ? "border-blue-600 bg-white shadow-lg ring-1 ring-blue-600"
+                  ? "border-amber-500 bg-white shadow-lg ring-1 ring-amber-500"
                   : "border-slate-200 bg-white"
               }`}
             >
               {tier.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber-500 px-4 py-1 text-xs font-semibold text-white">
                   Most Popular
                 </span>
               )}
@@ -77,7 +80,7 @@ export default function PricingPage() {
                     className="flex items-start gap-2 text-sm text-slate-700"
                   >
                     <svg
-                      className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -99,7 +102,7 @@ export default function PricingPage() {
                     href={tier.href}
                     className={`block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
                       tier.featured
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                        ? "bg-amber-500 text-white hover:bg-amber-600"
                         : "bg-slate-900 text-white hover:bg-slate-800"
                     }`}
                   >
@@ -110,7 +113,7 @@ export default function PricingPage() {
                     href={tier.href}
                     className={`block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
                       tier.featured
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
+                        ? "bg-amber-500 text-white hover:bg-amber-600"
                         : "bg-slate-900 text-white hover:bg-slate-800"
                     }`}
                   >
