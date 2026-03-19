@@ -441,7 +441,7 @@ export default function OnboardingPage() {
             <div className="rounded-xl border border-amber-200 bg-amber-50 p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="font-semibold text-amber-900">You're on the free plan (3 quotes max)</h3>
+                  <h3 className="font-semibold text-amber-900">You&apos;re on the free plan (3 quotes max)</h3>
                   <p className="mt-1 text-sm text-amber-800">
                     Go Pro for unlimited quotes, custom branding, and more.
                   </p>
