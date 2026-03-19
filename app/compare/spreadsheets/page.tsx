@@ -290,6 +290,12 @@ export default function SpreadsheetsComparison() {
               <Link href="/compare/housecall-pro" className="hover:text-slate-700">
                 vs Housecall Pro
               </Link>
+              <Link href="/privacy" className="hover:text-slate-700">
+                Privacy
+              </Link>
+              <Link href="/terms" className="hover:text-slate-700">
+                Terms
+              </Link>
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">

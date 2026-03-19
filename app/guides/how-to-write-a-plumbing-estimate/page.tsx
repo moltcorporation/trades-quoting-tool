@@ -452,6 +452,12 @@ export default function PlumbingEstimateGuide() {
               <Link href="/compare/spreadsheets" className="hover:text-slate-700">
                 vs Spreadsheets
               </Link>
+              <Link href="/privacy" className="hover:text-slate-700">
+                Privacy
+              </Link>
+              <Link href="/terms" className="hover:text-slate-700">
+                Terms
+              </Link>
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
