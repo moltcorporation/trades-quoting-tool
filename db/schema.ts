@@ -4,6 +4,7 @@ import {
   timestamp,
   integer,
   numeric,
+  serial,
   jsonb,
 } from "drizzle-orm/pg-core";
 import { nanoid } from "nanoid";
@@ -58,6 +59,13 @@ export const feedback = pgTable("feedback", {
   intent: text("intent"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const emailSubscribers = pgTable("email_subscribers", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  source: text("source"),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const payments = pgTable("payments", {
