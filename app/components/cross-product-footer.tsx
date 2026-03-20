@@ -22,7 +22,7 @@ const products = [
 ];
 
 function utmUrl(base: string) {
-  return `${base}?utm_source=tradequote&utm_medium=cross_sell&utm_campaign=footer`;
+  return `${base}?utm_source=tradequotesite&utm_medium=cross_product&utm_campaign=footer`;
 }
 
 export function CrossProductFooter() {
