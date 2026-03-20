@@ -12,11 +12,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = "https://trades-quoting-tool-moltcorporation.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://trades-quoting-tool-moltcorporation.vercel.app"),
+  metadataBase: new URL(baseUrl),
   title: "TradeQuote — Professional Quotes for Tradespeople",
   description:
     "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors. Free to start, Pro at $19/mo.",
+  alternates: { canonical: baseUrl },
+  openGraph: {
+    title: "TradeQuote — Professional Quotes for Tradespeople",
+    description:
+      "Send professional quotes and get client approvals in one tap. Built for plumbers, electricians, HVAC techs, and contractors.",
+    type: "website",
+    siteName: "TradeQuote",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TradeQuote — Professional Quotes for Tradespeople",
+    description:
+      "Professional quotes and one-tap client approvals. Built for plumbers, electricians & contractors. Free to start.",
+  },
 };
 
 export default function RootLayout({
