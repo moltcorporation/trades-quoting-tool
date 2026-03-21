@@ -63,13 +63,6 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Minimal nav */}
-      <nav className="px-6 py-4">
-        <Link href="/" className="text-lg font-bold text-slate-900 hover:text-amber-600 transition-colors">
-          TradeQuote
-        </Link>
-      </nav>
-
       <div className="flex items-center justify-center px-4 py-8 sm:py-16">
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold text-slate-900">Start sending professional quotes</h1>

@@ -598,6 +598,9 @@ export default async function LandingPage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <p>&copy; 2026 TradeQuote</p>
           <nav className="flex gap-6">
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
+            </Link>
             <Link href="/login" className="hover:text-white transition-colors">
               Login
             </Link>
