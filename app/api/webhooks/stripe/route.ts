@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac } from "crypto";
 import { db } from "@/db";
-import { users } from "@/db/schema";
+import { users, conversionEvents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
@@ -88,9 +88,15 @@ export async function POST(request: NextRequest) {
         });
       }
 
-      // Find user by email
+      // Find user by email (include UTM fields for conversion attribution)
       const [user] = await db
-        .select({ id: users.id, plan: users.plan })
+        .select({
+          id: users.id,
+          plan: users.plan,
+          utmSource: users.utmSource,
+          utmMedium: users.utmMedium,
+          utmCampaign: users.utmCampaign,
+        })
         .from(users)
         .where(eq(users.email, email))
         .limit(1);
@@ -111,6 +117,19 @@ export async function POST(request: NextRequest) {
           .where(eq(users.id, user.id));
 
         console.log(`Updated user ${user.id} to Pro plan`);
+      }
+
+      // Track purchase conversion event with UTM attribution from user record
+      try {
+        await db.insert(conversionEvents).values({
+          userId: user.id,
+          eventType: "purchase_completed",
+          utmSource: user.utmSource,
+          utmMedium: user.utmMedium,
+          utmCampaign: user.utmCampaign,
+        });
+      } catch {
+        // Non-blocking — don't fail webhook if event tracking fails
       }
 
       return NextResponse.json({

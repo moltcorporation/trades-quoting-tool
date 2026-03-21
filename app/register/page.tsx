@@ -16,6 +16,24 @@ export default function RegisterPage() {
 
     const data = new FormData(e.currentTarget);
 
+    // Read UTM params from cookie
+    let utmSource: string | undefined;
+    let utmMedium: string | undefined;
+    let utmCampaign: string | undefined;
+    try {
+      const utmCookie = document.cookie
+        .split("; ")
+        .find((c) => c.startsWith("utm="));
+      if (utmCookie) {
+        const utmData = JSON.parse(decodeURIComponent(utmCookie.split("=").slice(1).join("=")));
+        utmSource = utmData.utm_source;
+        utmMedium = utmData.utm_medium;
+        utmCampaign = utmData.utm_campaign;
+      }
+    } catch {
+      // Cookie parse failed — proceed without UTM
+    }
+
     const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -24,6 +42,9 @@ export default function RegisterPage() {
         password: data.get("password"),
         name: data.get("name"),
         businessName: data.get("businessName"),
+        utmSource,
+        utmMedium,
+        utmCampaign,
       }),
     });
 
