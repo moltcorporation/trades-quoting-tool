@@ -525,7 +525,7 @@ export default async function LandingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 font-bold">&#x2713;</span>
-                  Priority support
+                  48-hour email support
                 </li>
               </ul>
               <a
@@ -617,6 +617,9 @@ export default async function LandingPage() {
             </Link>
             <Link href="/register" className="hover:text-white transition-colors">
               Register
+            </Link>
+            <Link href="/contact" className="hover:text-white transition-colors">
+              Contact
             </Link>
             <Link href="/feedback" className="hover:text-white transition-colors">
               Feedback

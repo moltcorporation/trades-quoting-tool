@@ -94,6 +94,20 @@ export default async function DashboardPage() {
         ))}
       </div>
 
+      {/* Contact support */}
+      <div className="mt-6 rounded-lg border border-zinc-200 bg-white p-4 flex items-center justify-between">
+        <div>
+          <p className="text-sm font-medium text-zinc-700">Need help?</p>
+          <p className="text-xs text-zinc-400">We respond within 48 hours</p>
+        </div>
+        <Link
+          href="/contact"
+          className="text-sm font-medium text-amber-600 hover:text-amber-700"
+        >
+          Contact Support &rarr;
+        </Link>
+      </div>
+
       {totalQuotes.value === 0 && (
         <>
           <div className="mt-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-8 text-center">

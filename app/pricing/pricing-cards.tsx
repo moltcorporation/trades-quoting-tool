@@ -41,7 +41,7 @@ export function PricingCards({
       features: [
         "Unlimited quotes",
         "Payment tracking",
-        "Priority support",
+        "48-hour email support",
       ],
       cta: proCtaLabel,
       href: proUrl,
