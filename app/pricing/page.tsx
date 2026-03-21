@@ -9,10 +9,29 @@ import { eq } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
+const baseUrl = "https://trades-quoting-tool-moltcorporation.vercel.app";
+
 export const metadata: Metadata = {
   title: "Pricing — TradeQuote",
   description:
     "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
+  alternates: { canonical: `${baseUrl}/pricing` },
+  openGraph: {
+    title: "Pricing — TradeQuote",
+    description:
+      "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
+    url: `${baseUrl}/pricing`,
+    type: "website",
+    siteName: "TradeQuote",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing — TradeQuote",
+    description:
+      "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default async function PricingPage() {
