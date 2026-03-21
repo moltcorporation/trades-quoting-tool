@@ -193,7 +193,7 @@ export default function SettingsPage() {
                   : "3 active quotes"}
               </p>
             </div>
-            {plan === "free" && (
+            {plan === "free" ? (
               <a
                 href={buildUpgradeUrl()}
                 onClick={() => trackEvent("checkout_initiated", { plan: "pro", source: "settings" })}
@@ -201,7 +201,16 @@ export default function SettingsPage() {
               >
                 Upgrade to Pro
               </a>
-            )}
+            ) : process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK ? (
+              <a
+                href={process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+              >
+                Manage Subscription
+              </a>
+            ) : null}
           </div>
         </div>
 

@@ -7,9 +7,13 @@ import { CheckoutLink } from "../components/checkout-link";
 export function PricingCards({
   proMonthlyUrl,
   proAnnualUrl,
+  userPlan,
+  portalUrl,
 }: {
   proMonthlyUrl: string;
   proAnnualUrl: string;
+  userPlan?: string;
+  portalUrl?: string | null;
 }) {
   const [isAnnual, setIsAnnual] = useState(false);
 
@@ -121,7 +125,16 @@ export function PricingCards({
               ))}
             </ul>
             <div className="mt-8">
-              {tier.href.startsWith("http") ? (
+              {tier.featured && userPlan === "pro" && portalUrl ? (
+                <a
+                  href={portalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full rounded-lg border border-amber-500 px-4 py-2.5 text-center text-sm font-semibold text-amber-600 hover:bg-amber-50 transition"
+                >
+                  Manage Subscription
+                </a>
+              ) : tier.href.startsWith("http") ? (
                 <CheckoutLink
                   href={tier.href}
                   plan={`${tier.name.toLowerCase()}${isAnnual && tier.featured ? "_annual" : ""}`}

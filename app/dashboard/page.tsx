@@ -94,6 +94,24 @@ export default async function DashboardPage() {
         ))}
       </div>
 
+      {/* Subscription management for Pro users */}
+      {user.plan === "pro" && process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK && (
+        <div className="mt-6 rounded-lg border border-zinc-200 bg-white p-4 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-zinc-700">Pro Plan</p>
+            <p className="text-xs text-zinc-400">Manage billing, update payment, or cancel</p>
+          </div>
+          <a
+            href={process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-amber-600 hover:text-amber-700"
+          >
+            Manage Subscription &rarr;
+          </a>
+        </div>
+      )}
+
       {/* Contact support */}
       <div className="mt-6 rounded-lg border border-zinc-200 bg-white p-4 flex items-center justify-between">
         <div>
