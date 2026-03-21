@@ -22,8 +22,6 @@ export default function RegisterPage() {
       body: JSON.stringify({
         email: data.get("email"),
         password: data.get("password"),
-        name: data.get("name"),
-        businessName: data.get("businessName"),
       }),
     });
 
@@ -53,7 +51,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold text-slate-900">Start sending professional quotes</h1>
         <p className="mt-1 text-sm text-slate-500">
-          Free plan includes 3 active quotes. No credit card required.
+          Create your free account. 3 active quotes included.
         </p>
 
         {error && (
@@ -64,20 +62,13 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Your name</label>
-            <input type="text" name="name" id="name" required className={inputClass} />
-          </div>
-          <div>
-            <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">Business name</label>
-            <input type="text" name="businessName" id="businessName" required placeholder="e.g. Mike's Plumbing" className={inputClass} />
-          </div>
-          <div>
             <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
             <input type="email" name="email" id="email" required className={inputClass} />
           </div>
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-1">Password</label>
             <input type="password" name="password" id="password" required minLength={8} className={inputClass} />
+            <p className="mt-1 text-xs text-slate-500">Minimum 8 characters</p>
           </div>
           <button
             type="submit"
@@ -87,6 +78,27 @@ export default function RegisterPage() {
             {loading ? "Creating account..." : "Create Free Account"}
           </button>
         </form>
+
+        {/* What happens next */}
+        <div className="mt-6 rounded-lg border border-amber-100 bg-amber-50 p-4">
+          <p className="mb-3 text-center text-xs font-medium text-amber-900">
+            What happens next:
+          </p>
+          <div className="space-y-2 text-xs text-amber-900">
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-200 text-amber-700 text-[10px] font-bold">1</span>
+              <span>Create your free account instantly</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-200 text-amber-700 text-[10px] font-bold">2</span>
+              <span>Start sending professional quotes immediately</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-200 text-amber-700 text-[10px] font-bold">3</span>
+              <span>Upgrade to Pro for unlimited quotes</span>
+            </div>
+          </div>
+        </div>
 
         {/* Trust signals for ad traffic */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
