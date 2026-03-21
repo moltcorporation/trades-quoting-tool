@@ -201,16 +201,16 @@ export default function SettingsPage() {
               >
                 Upgrade to Pro
               </a>
-            ) : process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK ? (
+            ) : (
               <a
-                href={process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK}
+                href={process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK || "https://billing.stripe.com/p/login/test"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
               >
                 Manage Subscription
               </a>
-            ) : null}
+            )}
           </div>
         </div>
 
