@@ -6,6 +6,7 @@ import {
   numeric,
   jsonb,
   index,
+  serial,
 } from "drizzle-orm/pg-core";
 import { nanoid } from "nanoid";
 
@@ -88,6 +89,21 @@ export const passwordResetTokens = pgTable("password_reset_tokens", {
   expiresAt: timestamp("expires_at").notNull(),
   usedAt: timestamp("used_at"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const dripSchedule = pgTable("drip_schedule", {
+  id: serial("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  emailStep: integer("email_step").notNull(),
+  sendAt: timestamp("send_at").notNull(),
+  sentAt: timestamp("sent_at"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const dripUnsubscribes = pgTable("drip_unsubscribes", {
+  id: serial("id").primaryKey(),
+  userId: text("user_id").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const conversionEvents = pgTable(

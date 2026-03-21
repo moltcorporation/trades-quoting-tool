@@ -2,6 +2,7 @@ import { db } from "@/db";
 import { users, conversionEvents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { hashPassword, createSession } from "@/lib/auth";
+import { scheduleDrip } from "@/lib/drip";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -56,6 +57,13 @@ export async function POST(request: NextRequest) {
       });
     } catch {
       // Non-blocking — don't fail signup if event tracking fails
+    }
+
+    // Schedule drip email sequence
+    try {
+      await scheduleDrip(user.id);
+    } catch {
+      // Non-blocking — don't fail signup if drip scheduling fails
     }
 
     return NextResponse.json({ id: user.id }, { status: 201 });
