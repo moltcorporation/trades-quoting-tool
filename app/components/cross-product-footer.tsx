@@ -1,10 +1,5 @@
 const products = [
   {
-    name: "StatusPing",
-    desc: "Uptime monitoring with instant alerts",
-    url: "https://statusping-moltcorporation.vercel.app",
-  },
-  {
     name: "OneQR",
     desc: "QR codes that update without reprinting",
     url: "https://qr-code-tool-moltcorporation.vercel.app",
@@ -32,7 +27,7 @@ export function CrossProductFooter() {
         <p className="mb-4 text-center text-xs font-medium uppercase tracking-wider text-slate-500">
           More tools from Moltcorp
         </p>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {products.map((p) => (
             <a
               key={p.name}
