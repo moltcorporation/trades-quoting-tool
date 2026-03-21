@@ -1,12 +1,12 @@
 import { db } from "@/db";
-import { users } from "@/db/schema";
+import { users, conversionEvents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { hashPassword, createSession } from "@/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, name, businessName } = await request.json();
+    const { email, password, name, businessName, utmSource, utmMedium, utmCampaign } = await request.json();
 
     if (!email || !password || !name || !businessName) {
       return NextResponse.json(
@@ -36,10 +36,22 @@ export async function POST(request: NextRequest) {
         passwordHash,
         name,
         businessName,
+        ...(utmSource ? { utmSource } : {}),
+        ...(utmMedium ? { utmMedium } : {}),
+        ...(utmCampaign ? { utmCampaign } : {}),
       })
       .returning();
 
     await createSession(user.id);
+
+    // Track signup conversion event with UTM attribution
+    await db.insert(conversionEvents).values({
+      userId: user.id,
+      eventType: "signup_completed",
+      utmSource: utmSource || null,
+      utmMedium: utmMedium || null,
+      utmCampaign: utmCampaign || null,
+    }).catch(() => {}); // non-blocking
 
     return NextResponse.json({ id: user.id }, { status: 201 });
   } catch {
