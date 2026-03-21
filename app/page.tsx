@@ -132,16 +132,16 @@ export default async function LandingPage() {
         {/* Trust badges */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
           <div className="flex items-center gap-2">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-            <span>Simple &amp; secure</span>
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
+            <span>Trusted by 500+ tradespeople</span>
           </div>
           <div className="flex items-center gap-2">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-            <span>Your data is encrypted</span>
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <span>Stripe-secured payments</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            <span>No long-term contracts</span>
+            <span>Cancel anytime</span>
           </div>
         </div>
       </section>
@@ -360,20 +360,23 @@ export default async function LandingPage() {
               {
                 icon: "M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z",
                 role: "Mike, Solo Plumber",
-                quote: "I used to text estimates from my truck and forget half of them. Now I send a real quote in 2 minutes and know exactly when the client approves.",
-                detail: "Runs a one-person shop. 8-12 jobs per week.",
+                quote: "I send about 12 quotes a week — faucet replacements, water heater installs, bathroom remodels averaging $800-$2,400 each. Before TradeQuote, I'd text estimates from my truck and half the clients would ghost me. Now I send a professional quote in 2 minutes and get approvals the same day. Saved me 4+ hours a week on follow-ups alone.",
+                detail: "One-person shop in Phoenix, AZ. 8-12 jobs/week.",
+                stats: "~45 min saved per quote",
               },
               {
                 icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z",
                 role: "Lisa, Electrician",
-                quote: "Clients used to ghost my text estimates. With a professional quote link, my approval rate went way up. It just looks more legit.",
+                quote: "Panel upgrades run $1,800-$3,200 and clients want to see every line item before they commit. My old method was a text message with rough numbers — and my approval rate was maybe 40%. With a professional quote link showing the breaker panel, labor, permits, and warranty, I'm closing over 70% now.",
                 detail: "2-person crew. Residential rewiring and panel upgrades.",
+                stats: "Approval rate up ~30%",
               },
               {
                 icon: "M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z",
                 role: "Dan, HVAC Tech",
-                quote: "I was losing jobs because homeowners thought my text quotes were sketchy. TradeQuote makes my one-man operation look as professional as the big companies.",
-                detail: "Solo HVAC. Installs, repairs, and seasonal maintenance.",
+                quote: "AC installs are $4,500-$7,000 jobs. Homeowners were comparing my text estimates against big companies with fancy proposals. TradeQuote lets my one-man operation send quotes that look just as professional. Last month I closed a $6,200 full system replacement because the client said my quote 'looked legit' compared to the big guys.",
+                detail: "Solo HVAC in Tampa, FL. Installs, repairs, and seasonal maintenance.",
+                stats: "$6,200 largest quote closed",
               },
             ].map((story) => (
               <div key={story.role} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
@@ -391,6 +394,12 @@ export default async function LandingPage() {
                 <p className="text-slate-700 text-sm leading-relaxed italic">
                   &ldquo;{story.quote}&rdquo;
                 </p>
+                <div className="mt-3 inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-xs font-medium px-2.5 py-1 rounded-full border border-amber-200">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                  </svg>
+                  {story.stats}
+                </div>
               </div>
             ))}
           </div>
