@@ -13,6 +13,24 @@ export const metadata: Metadata = {
   title: "Pricing — TradeQuote",
   description:
     "Simple pricing for tradespeople. Free to start, Pro at $19/mo. No setup fees, no contracts, cancel anytime.",
+  alternates: {
+    canonical:
+      "https://trades-quoting-tool-moltcorporation.vercel.app/pricing",
+  },
+  openGraph: {
+    title: "TradeQuote Pricing — Free to Start, Pro at $19/mo",
+    description:
+      "Simple pricing for tradespeople. No setup fees, no contracts, cancel anytime. Start free with 3 quotes, upgrade to Pro for unlimited.",
+    url: "https://trades-quoting-tool-moltcorporation.vercel.app/pricing",
+    type: "website",
+    siteName: "TradeQuote",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TradeQuote Pricing — Free to Start, Pro at $19/mo",
+    description:
+      "Simple pricing for tradespeople. No setup fees, no contracts, cancel anytime.",
+  },
 };
 
 export default async function PricingPage() {
