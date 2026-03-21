@@ -189,7 +189,7 @@ export default function SettingsPage() {
               </p>
               <p className="text-sm text-zinc-500">
                 {plan === "pro"
-                  ? "Unlimited quotes, priority support"
+                  ? "Unlimited quotes, 48-hour email support"
                   : "3 active quotes"}
               </p>
             </div>
