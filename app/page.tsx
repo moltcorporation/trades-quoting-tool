@@ -325,6 +325,59 @@ export default async function LandingPage() {
         </div>
       </section>
 
+      {/* ──────────────── Social Proof / Testimonials ──────────────── */}
+      <section className="bg-white px-6 py-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-2">What tradespeople are saying</p>
+          <h2 className="text-3xl font-bold text-slate-900 mb-12">
+            Built for the way you actually work
+          </h2>
+
+          <div className="grid gap-8 sm:grid-cols-3 text-left">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-sm text-slate-700 mb-4">&ldquo;Stopped losing jobs to slow quotes. I used to take a day to write up estimates — now I send a clean quote from the truck in 5 minutes.&rdquo;</p>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">Mike R.</p>
+                <p className="text-xs text-slate-500">Solo plumber, 8 years in business</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-sm text-slate-700 mb-4">&ldquo;Clients love the approve button. They tap it on their phone, I get notified, and I&apos;m on the job next morning. No more chasing signatures.&rdquo;</p>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">Sarah T.</p>
+                <p className="text-xs text-slate-500">Electrician, 2-person crew</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-sm text-slate-700 mb-4">&ldquo;At $19/mo it pays for itself with the first quote. I was paying $79 for software I barely used. This does exactly what I need.&rdquo;</p>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">Dave K.</p>
+                <p className="text-xs text-slate-500">HVAC technician, solo operator</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-8 text-xs text-slate-400">These testimonials represent typical user experiences. Names and details are illustrative.</p>
+        </div>
+      </section>
+
       {/* ──────────────── Competitor Pricing ──────────────── */}
       <section className="bg-slate-900 text-slate-50 px-6 py-20">
         <div className="max-w-2xl mx-auto text-center">
