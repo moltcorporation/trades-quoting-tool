@@ -4,6 +4,7 @@ import { quotes, users } from "@/db/schema";
 import { getSession } from "@/lib/auth";
 import { eq, desc, and, inArray } from "drizzle-orm";
 import { canCreateQuote, checkProAccess } from "@/lib/plans";
+import { trackServerEvent } from "@/lib/track";
 
 export async function POST(request: NextRequest) {
   const session = await getSession(request);
@@ -113,6 +114,28 @@ export async function POST(request: NextRequest) {
       sentAt,
     })
     .returning();
+
+  // Track quote_created conversion event
+  try {
+    const [userUtm] = await db
+      .select({
+        utmSource: users.utmSource,
+        utmMedium: users.utmMedium,
+        utmCampaign: users.utmCampaign,
+      })
+      .from(users)
+      .where(eq(users.id, session.userId))
+      .limit(1);
+
+    await trackServerEvent(
+      session.userId,
+      "quote_created",
+      userUtm,
+      { quote_id: quote.id, status: quoteStatus }
+    );
+  } catch {
+    // Non-blocking
+  }
 
   return NextResponse.json(quote, { status: 201 });
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { STRIPE_PAYMENT_LINKS } from "@/lib/plans";
+import { trackEvent } from "@/lib/track";
 
 const TRADE_TYPES = [
   "Plumber",
@@ -195,6 +196,7 @@ export default function SettingsPage() {
             {plan === "free" && (
               <a
                 href={buildUpgradeUrl()}
+                onClick={() => trackEvent("checkout_initiated", { plan: "pro", source: "settings" })}
                 className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
               >
                 Upgrade to Pro
