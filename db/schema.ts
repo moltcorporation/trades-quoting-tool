@@ -5,6 +5,7 @@ import {
   integer,
   numeric,
   jsonb,
+  index,
 } from "drizzle-orm/pg-core";
 import { nanoid } from "nanoid";
 
@@ -22,6 +23,9 @@ export const users = pgTable("users", {
   tradeType: text("trade_type"),
   plan: text("plan").default("free").notNull(),
   stripeCustomerId: text("stripe_customer_id"),
+  utmSource: text("utm_source"),
+  utmMedium: text("utm_medium"),
+  utmCampaign: text("utm_campaign"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -59,6 +63,28 @@ export const feedback = pgTable("feedback", {
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+export const conversionEvents = pgTable(
+  "conversion_events",
+  {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => nanoid()),
+    userId: text("user_id"),
+    eventType: text("event_type").notNull(),
+    utmSource: text("utm_source"),
+    utmMedium: text("utm_medium"),
+    utmCampaign: text("utm_campaign"),
+    utmContent: text("utm_content"),
+    utmTerm: text("utm_term"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("ce_event_type_idx").on(table.eventType),
+    index("ce_utm_source_idx").on(table.utmSource),
+    index("ce_created_at_idx").on(table.createdAt),
+  ]
+);
 
 export const payments = pgTable("payments", {
   id: text("id")

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac } from "crypto";
 import { db } from "@/db";
-import { users } from "@/db/schema";
+import { users, conversionEvents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
@@ -109,6 +109,21 @@ export async function POST(request: NextRequest) {
           .update(users)
           .set({ plan: "pro" })
           .where(eq(users.id, user.id));
+
+        // Track purchase conversion with UTM from user record
+        const [fullUser] = await db
+          .select({ utmSource: users.utmSource, utmMedium: users.utmMedium, utmCampaign: users.utmCampaign })
+          .from(users)
+          .where(eq(users.id, user.id))
+          .limit(1);
+
+        await db.insert(conversionEvents).values({
+          userId: user.id,
+          eventType: "purchase_completed",
+          utmSource: fullUser?.utmSource || null,
+          utmMedium: fullUser?.utmMedium || null,
+          utmCampaign: fullUser?.utmCampaign || null,
+        }).catch(() => {});
 
         console.log(`Updated user ${user.id} to Pro plan`);
       }
