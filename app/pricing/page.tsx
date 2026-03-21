@@ -37,15 +37,17 @@ export const metadata: Metadata = {
 export default async function PricingPage() {
   // If user is logged in, prefill email on Stripe links
   let userEmail: string | undefined;
+  let userPlan: string | undefined;
   try {
     const session = await getSession();
     if (session) {
       const [user] = await db
-        .select({ email: users.email })
+        .select({ email: users.email, plan: users.plan })
         .from(users)
         .where(eq(users.id, session.userId))
         .limit(1);
       userEmail = user?.email;
+      userPlan = user?.plan;
     }
   } catch {
     // Not logged in — no prefill
@@ -53,6 +55,7 @@ export default async function PricingPage() {
 
   const proMonthlyUrl = buildCheckoutUrl("pro_monthly", userEmail);
   const proAnnualUrl = buildCheckoutUrl("pro_annual", userEmail);
+  const portalUrl = process.env.NEXT_PUBLIC_STRIPE_PORTAL_LINK || null;
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -73,6 +76,8 @@ export default async function PricingPage() {
         <PricingCards
           proMonthlyUrl={proMonthlyUrl}
           proAnnualUrl={proAnnualUrl}
+          userPlan={userPlan}
+          portalUrl={portalUrl}
         />
       </div>
     </div>
