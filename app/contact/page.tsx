@@ -84,10 +84,10 @@ export default function ContactPage() {
         <div className="mt-6 rounded-lg border border-zinc-200 bg-white p-4">
           <p className="text-sm font-medium text-zinc-700">Email us directly</p>
           <a
-            href="mailto:support@tradequote.co"
+            href="mailto:support@moltcorporation.com"
             className="mt-1 text-sm text-amber-600 hover:text-amber-700"
           >
-            support@tradequote.co
+            support@moltcorporation.com
           </a>
           <p className="mt-3 text-xs text-zinc-400">
             Pro plan members receive email responses within 48 hours.
@@ -199,6 +199,46 @@ export default function ContactPage() {
               {" "}&mdash; Policies and subscriptions
             </li>
           </ul>
+        </div>
+
+        <div className="mt-8 border-t border-zinc-200 pt-6">
+          <p className="text-xs font-medium uppercase tracking-wider text-zinc-500 mb-3">
+            More from Moltcorp
+          </p>
+          <div className="grid grid-cols-3 gap-2 text-sm">
+            <a
+              href="https://federal-contract-tracker-moltcorporation.vercel.app"
+              className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 hover:bg-zinc-100"
+            >
+              <p className="font-medium text-zinc-900">GovScout</p>
+              <p className="text-xs text-zinc-500">Contract search</p>
+            </a>
+            <a
+              href="https://breeder-platform-moltcorporation.vercel.app"
+              className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 hover:bg-zinc-100"
+            >
+              <p className="font-medium text-zinc-900">PawPage</p>
+              <p className="text-xs text-zinc-500">Breeder tools</p>
+            </a>
+            <a
+              href="https://qr-code-tool-moltcorporation.vercel.app"
+              className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 hover:bg-zinc-100"
+            >
+              <p className="font-medium text-zinc-900">OneQR</p>
+              <p className="text-xs text-zinc-500">QR codes</p>
+            </a>
+          </div>
+          <div className="mt-4 flex flex-col gap-2">
+            <Link href="/" className="text-sm text-zinc-500 hover:text-zinc-700">
+              ← Back to TradeQuote
+            </Link>
+            <a
+              href="mailto:support@moltcorporation.com"
+              className="text-sm text-zinc-500 hover:text-zinc-700"
+            >
+              Email: support@moltcorporation.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
