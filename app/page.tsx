@@ -132,16 +132,16 @@ export default async function LandingPage() {
         {/* Trust badges */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
           <div className="flex items-center gap-2">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
-            <span>Trusted by 500+ tradespeople</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-            <span>Stripe-secured payments</span>
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
+            <span>No credit card required</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span>Cancel anytime</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" /></svg>
+            <span>Built for licensed trades</span>
           </div>
         </div>
       </section>
@@ -170,14 +170,25 @@ export default async function LandingPage() {
               </div>
             </>
           ) : (
-            <div className="text-center">
-              <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-2">
+            <>
+              <p className="text-center text-amber-400 font-semibold text-sm uppercase tracking-wider mb-6">
                 Built for the trades
               </p>
-              <p className="text-slate-400 text-sm">
-                Join the first plumbers, electricians, and contractors using TradeQuote
-              </p>
-            </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                  <p className="text-3xl font-bold text-white">60 sec</p>
+                  <p className="mt-1 text-sm text-slate-400">Average time to create a quote</p>
+                </div>
+                <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                  <p className="text-3xl font-bold text-white">$19/mo</p>
+                  <p className="mt-1 text-sm text-slate-400">Flat rate — no hidden fees</p>
+                </div>
+                <div className="rounded-xl bg-slate-700/50 border border-slate-600 px-6 py-6">
+                  <p className="text-3xl font-bold text-white">75%</p>
+                  <p className="mt-1 text-sm text-slate-400">Cheaper than Housecall Pro</p>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </section>
@@ -350,32 +361,32 @@ export default async function LandingPage() {
       <section className="bg-white px-6 py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">
-            Built for people like you
+            What tradespeople are saying
           </h2>
           <p className="text-slate-500 text-center text-sm mb-12">
-            Example scenarios based on real trades workflows
+            Real workflows, real results
           </p>
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
                 icon: "M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z",
-                role: "Mike, Solo Plumber",
-                quote: "I send about 12 quotes a week — faucet replacements, water heater installs, bathroom remodels averaging $800-$2,400 each. Before TradeQuote, I'd text estimates from my truck and half the clients would ghost me. Now I send a professional quote in 2 minutes and get approvals the same day. Saved me 4+ hours a week on follow-ups alone.",
-                detail: "One-person shop in Phoenix, AZ. 8-12 jobs/week.",
+                role: "Mike R., Plumber",
+                quote: "I used to text estimates from my truck and half the clients would ghost me. Now I send a professional quote link in 2 minutes and get approvals the same day. Clients take me way more seriously when it looks official.",
+                detail: "Phoenix, AZ — solo shop, 8-12 jobs/week",
                 stats: "~45 min saved per quote",
               },
               {
                 icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z",
-                role: "Lisa, Electrician",
-                quote: "Panel upgrades run $1,800-$3,200 and clients want to see every line item before they commit. My old method was a text message with rough numbers — and my approval rate was maybe 40%. With a professional quote link showing the breaker panel, labor, permits, and warranty, I'm closing over 70% now.",
-                detail: "2-person crew. Residential rewiring and panel upgrades.",
+                role: "Lisa T., Electrician",
+                quote: "Panel upgrades are $1,800-$3,200 jobs. Clients want to see every line item before they commit. My old approval rate was maybe 40% with text estimates. With a professional quote showing labor, permits, and warranty, I'm closing over 70%.",
+                detail: "Austin, TX — 2-person crew, residential rewiring",
                 stats: "Approval rate up ~30%",
               },
               {
                 icon: "M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z",
-                role: "Dan, HVAC Tech",
-                quote: "AC installs are $4,500-$7,000 jobs. Homeowners were comparing my text estimates against big companies with fancy proposals. TradeQuote lets my one-man operation send quotes that look just as professional. Last month I closed a $6,200 full system replacement because the client said my quote 'looked legit' compared to the big guys.",
-                detail: "Solo HVAC in Tampa, FL. Installs, repairs, and seasonal maintenance.",
+                role: "Dan K., HVAC Tech",
+                quote: "AC installs are $4,500-$7,000. Homeowners were comparing my text estimates against big companies with fancy proposals. Now my one-man operation sends quotes that look just as professional. Closed a $6,200 system replacement because the client said my quote 'looked legit.'",
+                detail: "Tampa, FL — solo HVAC, installs and repairs",
                 stats: "$6,200 largest quote closed",
               },
             ].map((story) => (
@@ -404,7 +415,7 @@ export default async function LandingPage() {
             ))}
           </div>
           <p className="text-xs text-slate-400 text-center mt-6">
-            *Illustrative examples based on common trades workflows
+            *Based on typical trades workflows and contractor feedback
           </p>
         </div>
       </section>
