@@ -102,8 +102,27 @@ export default function RegisterPage() {
           </button>
         </form>
 
+        {/* What happens next */}
+        <div className="mt-6 rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <p className="text-xs font-medium text-slate-700 mb-2">What happens next:</p>
+          <ol className="space-y-1.5 text-xs text-slate-500">
+            <li className="flex items-start gap-2">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-bold text-amber-700">1</span>
+              Create your account (30 seconds)
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-bold text-amber-700">2</span>
+              Send your first quote to a client
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-bold text-amber-700">3</span>
+              Get one-tap approval &amp; payment
+            </li>
+          </ol>
+        </div>
+
         {/* Trust signals for ad traffic */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
           <span className="flex items-center gap-1">
             <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             No credit card
