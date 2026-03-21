@@ -15,6 +15,12 @@ export function PublicNav() {
             Pricing
           </Link>
           <Link
+            href="/about"
+            className="text-sm text-slate-300 hover:text-white transition-colors"
+          >
+            About
+          </Link>
+          <Link
             href="/login"
             className="text-sm text-slate-300 hover:text-white transition-colors"
           >
