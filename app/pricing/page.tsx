@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { buildCheckoutUrl } from "@/lib/plans";
 import { PublicNav } from "../components/public-nav";
+import { CheckoutLink } from "../components/checkout-link";
 import { getSession } from "@/lib/auth";
 import { db } from "@/db";
 import { users } from "@/db/schema";
@@ -150,8 +151,9 @@ export default async function PricingPage() {
               </ul>
               <div className="mt-8">
                 {tier.href.startsWith("http") ? (
-                  <a
+                  <CheckoutLink
                     href={tier.href}
+                    plan={tier.name.toLowerCase()}
                     className={`block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
                       tier.featured
                         ? "bg-amber-500 text-white hover:bg-amber-600"
@@ -159,7 +161,7 @@ export default async function PricingPage() {
                     }`}
                   >
                     {tier.cta}
-                  </a>
+                  </CheckoutLink>
                 ) : (
                   <Link
                     href={tier.href}

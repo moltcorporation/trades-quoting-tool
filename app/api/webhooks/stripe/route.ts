@@ -124,6 +124,7 @@ export async function POST(request: NextRequest) {
         await db.insert(conversionEvents).values({
           userId: user.id,
           eventType: "purchase_completed",
+          properties: JSON.stringify({ plan: "pro", payment_link: paymentLinkId }),
           utmSource: user.utmSource,
           utmMedium: user.utmMedium,
           utmCampaign: user.utmCampaign,

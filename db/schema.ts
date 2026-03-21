@@ -85,6 +85,7 @@ export const conversionEvents = pgTable(
       .$defaultFn(() => nanoid()),
     userId: text("user_id").references(() => users.id),
     eventType: text("event_type").notNull(),
+    properties: text("properties"),
     utmSource: text("utm_source"),
     utmMedium: text("utm_medium"),
     utmCampaign: text("utm_campaign"),
