@@ -12,11 +12,20 @@ export const metadata: Metadata = {
     "electrician quote template",
     "free estimate template",
     "contractor estimate template",
+    "roofing estimate template",
     "handyman invoice template",
   ],
 };
 
 const templates = [
+  {
+    title: "Roofing Estimate Template",
+    description:
+      "Free roofing estimate calculator. Enter job type, square footage, and materials to get an instant cost breakdown for new roofs, repairs, and replacements.",
+    href: "/templates/roofing-estimate",
+    trade: "Roofers",
+    avgJob: "$8,000 – $25,000",
+  },
   {
     title: "Handyman Invoice Template",
     description:
