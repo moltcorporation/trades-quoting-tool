@@ -75,6 +75,14 @@ const templates = [
     trade: "Lawn Care",
     avgJob: "$30 – $500",
   },
+  {
+    title: "Auto Body Repair Invoice Template",
+    description:
+      "Free auto body repair invoice template for collision repair, dent removal, paint jobs, and panel replacement. Itemize labor, parts, and materials instantly.",
+    href: "/templates/auto-body-repair-invoice",
+    trade: "Auto Body",
+    avgJob: "$500 – $10,000",
+  },
 ];
 
 const jsonLd = {
