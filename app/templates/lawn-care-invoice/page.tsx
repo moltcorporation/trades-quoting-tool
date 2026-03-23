@@ -51,16 +51,17 @@ const faqItems = [
 const jsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "Service",
     name: "Free Lawn Care Invoice Template",
     description:
       "Create professional lawn care invoices instantly with our free online template tool.",
-    applicationCategory: "BusinessApplication",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "TradeQuote",
+      url: "https://tradequote.com",
     },
+    serviceType: "Invoice Template",
+    areaServed: "US",
   },
   {
     "@context": "https://schema.org",
@@ -87,11 +88,11 @@ export default function LawnCareInvoiceTemplate() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
-            className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
           >
             Get Started
           </Link>
@@ -106,6 +107,8 @@ export default function LawnCareInvoiceTemplate() {
         <p className="mt-4 text-lg leading-8 text-slate-600">
           Professional invoices in seconds. Get paid faster with clear, itemized
           invoices for mowing, edging, leaf removal, and seasonal cleanup.
+          Peak season runs March through September — having invoices ready means
+          you spend more time on lawns and less on paperwork.
         </p>
 
         {/* Service Variants Section */}
@@ -229,12 +232,12 @@ export default function LawnCareInvoiceTemplate() {
             Ready to grow your lawn care business?
           </h2>
           <p className="mt-2 text-lg text-slate-300">
-            QuoteTrade automates invoicing, payment collection, and scheduling
+            TradeQuote automates invoicing, payment collection, and scheduling
             for lawn care professionals.
           </p>
           <Link
             href="/register"
-            className="mt-6 inline-block rounded-lg bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-700"
+            className="mt-6 inline-block rounded-lg bg-amber-500 px-8 py-3 text-sm font-bold text-slate-900 hover:bg-amber-400"
           >
             Create Your First Invoice — Free
           </Link>
@@ -268,6 +271,50 @@ export default function LawnCareInvoiceTemplate() {
                 Invoices for handyman and general repair services
               </p>
             </Link>
+            <Link
+              href="/templates/cleaning-invoice"
+              className="rounded-lg border border-slate-200 p-4 hover:border-slate-300 hover:bg-slate-50"
+            >
+              <h3 className="font-semibold text-slate-900">
+                Cleaning Invoice Template
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Professional invoices for house and commercial cleaning
+              </p>
+            </Link>
+            <Link
+              href="/templates/pressure-washing-estimate"
+              className="rounded-lg border border-slate-200 p-4 hover:border-slate-300 hover:bg-slate-50"
+            >
+              <h3 className="font-semibold text-slate-900">
+                Pressure Washing Estimate Template
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Estimates for driveways, decks, siding, and patios
+              </p>
+            </Link>
+            <Link
+              href="/templates/general-contractor-estimate"
+              className="rounded-lg border border-slate-200 p-4 hover:border-slate-300 hover:bg-slate-50"
+            >
+              <h3 className="font-semibold text-slate-900">
+                General Contractor Estimate Template
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Hub for all trade-specific estimate templates
+              </p>
+            </Link>
+            <Link
+              href="/templates/painting-estimate"
+              className="rounded-lg border border-slate-200 p-4 hover:border-slate-300 hover:bg-slate-50"
+            >
+              <h3 className="font-semibold text-slate-900">
+                Painting Estimate Template
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Estimates for interior and exterior painting projects
+              </p>
+            </Link>
           </div>
         </section>
       </main>
@@ -276,7 +323,7 @@ export default function LawnCareInvoiceTemplate() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -297,7 +344,7 @@ export default function LawnCareInvoiceTemplate() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>
