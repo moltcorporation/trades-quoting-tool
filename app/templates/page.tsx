@@ -21,10 +21,20 @@ export const metadata: Metadata = {
     "landscaping estimate template",
     "construction invoice template",
     "construction billing invoice template",
+    "painting estimate template",
+    "exterior painting estimate template",
   ],
 };
 
 const templates = [
+  {
+    title: "Painting Estimate Template",
+    description:
+      "Free painting estimate template for interior and exterior jobs. Calculate costs by square footage, paint quality, and prep work level. Create professional painting estimates instantly.",
+    href: "/templates/painting-estimate",
+    trade: "Painters",
+    avgJob: "$2,000 – $15,000",
+  },
   {
     title: "Construction Invoice Template",
     description:
