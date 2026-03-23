@@ -387,4 +387,25 @@ export const templateConfigs: Record<string, TemplateDownloadConfig> = {
     total: "$605",
     notes: "Monthly billing — due within 15 days. Service every Thursday (weather permitting, makeup day = Friday). Annual contract discount: 10% off monthly rate. Includes all equipment, fuel, and materials. Does not include irrigation repair, tree trimming, or mulch installation.",
   },
+
+  "tree-service-invoice": {
+    slug: "tree-service-invoice",
+    title: "Tree Service Invoice",
+    companyName: "Premier Tree Services",
+    companyTagline: "ISA-Certified Arborist · Licensed & Insured · Emergency Service",
+    documentNumber: "INV-TS-3429",
+    clientName: "Jennifer Martinez",
+    clientAddress: "847 Oak Ridge Road, Portland, OR 97214",
+    jobDescription: "Remove 40ft oak tree, grind stump, remove debris",
+    lineItems: [
+      { description: "Tree removal — 40ft oak, bucket truck", amount: "$1,200" },
+      { description: "Stump grinding — 24in diameter, 18in deep", amount: "$350" },
+      { description: "Debris hauling — 12 cu yd chipper truck", amount: "$400" },
+      { description: "Site cleanup and mulching", amount: "$150" },
+    ],
+    subtotal: "$2,100",
+    tax: "$168",
+    total: "$2,268",
+    notes: "Payment: 50% deposit ($1,134) upon agreement, 50% ($1,134) due upon completion. Includes all equipment, crew, and debris removal. Does not include new plantings or ground-level stump removal. Work performed weather-permitting; rain delays do not extend the job timeline beyond the original estimate date.",
+  },
 };
