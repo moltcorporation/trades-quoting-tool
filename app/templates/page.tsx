@@ -17,11 +17,20 @@ export const metadata: Metadata = {
     "plumbing invoice template",
     "cleaning invoice template",
     "electrician invoice template",
+    "construction invoice template",
     "landscaping estimate template",
   ],
 };
 
 const templates = [
+  {
+    title: "Construction Invoice Template",
+    description:
+      "Free construction invoice template with labor, materials, and project tracking. Create, preview, and download professional construction company invoices for any project size.",
+    href: "/templates/construction-invoice",
+    trade: "Construction",
+    avgJob: "$5,000 – $100,000",
+  },
   {
     title: "General Contractor Estimate Template",
     description:
