@@ -67,6 +67,14 @@ const templates = [
     trade: "Electricians",
     avgJob: "$300 – $5,000",
   },
+  {
+    title: "Lawn Care Invoice Template",
+    description:
+      "Free lawn care invoice template for mowing, edging, trimming, leaf removal, and seasonal cleanup. Create and download professional invoices instantly.",
+    href: "/templates/lawn-care-invoice",
+    trade: "Lawn Care",
+    avgJob: "$30 – $500",
+  },
 ];
 
 const jsonLd = {
