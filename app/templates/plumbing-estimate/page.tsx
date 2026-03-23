@@ -137,6 +137,20 @@ export default function PlumbingEstimateTemplate() {
             ))}
           </div>
         </section>
+        {/* Related templates */}
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">More estimate templates</h2>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Link href="/templates/hvac-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">HVAC Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For heating, cooling, and ventilation jobs</p>
+            </Link>
+            <Link href="/templates/electrical-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Electrical Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For panel upgrades, wiring, and installations</p>
+            </Link>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t border-slate-200 bg-white">
