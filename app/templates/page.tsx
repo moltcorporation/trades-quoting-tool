@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "contractor estimate template",
     "roofing estimate template",
     "handyman invoice template",
+    "plumbing invoice template",
   ],
 };
 
@@ -33,6 +34,14 @@ const templates = [
     href: "/templates/handyman-invoice",
     trade: "Handymen",
     avgJob: "$150 – $500",
+  },
+  {
+    title: "Plumbing Invoice Template",
+    description:
+      "Free plumbing invoice template with labor, parts, and service descriptions. Create, preview, and download professional plumber invoices instantly.",
+    href: "/templates/plumbing-invoice",
+    trade: "Plumbers",
+    avgJob: "$150 – $2,000",
   },
   {
     title: "Plumbing Estimate Template",
