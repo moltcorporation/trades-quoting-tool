@@ -84,6 +84,14 @@ const templates = [
     avgJob: "$150 – $2,000",
   },
   {
+    title: "Plumber Estimate Template",
+    description:
+      "Free plumber estimate template for residential and commercial jobs. Includes labor rates, materials, service calls, and diagnostic fees.",
+    href: "/templates/plumber-estimate",
+    trade: "Plumbers",
+    avgJob: "$150 – $2,000",
+  },
+  {
     title: "Plumbing Estimate Template",
     description:
       "Professional plumbing estimates with line items for labor, parts, and disposal. Covers faucet repairs, drain clearing, pipe replacement, and more.",
@@ -106,6 +114,14 @@ const templates = [
     href: "/templates/electrical-estimate",
     trade: "Electricians",
     avgJob: "$300 – $5,000",
+  },
+  {
+    title: "Electrician Quote Template (Alternative)",
+    description:
+      "Quick quote generator for electrical work. Enter job type, hours, and materials for instant pricing on rewiring, upgrades, and repairs.",
+    href: "/templates/electrician-quote",
+    trade: "Electricians",
+    avgJob: "$250 – $4,000",
   },
   {
     title: "Lawn Care Invoice Template",
