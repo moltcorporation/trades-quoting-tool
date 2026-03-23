@@ -91,7 +91,7 @@ export default function PressureWashingEstimateTemplate() {
             TradeQuote
           </Link>
           <Link
-            href="/register"
+            href="/register?trade=other"
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
             Get Started
@@ -237,7 +237,7 @@ export default function PressureWashingEstimateTemplate() {
             payments. Focus on your crews, not paperwork.
           </p>
           <Link
-            href="/register"
+            href="/register?trade=other"
             className="mt-6 inline-block rounded-lg bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-700"
           >
             Create Your First Estimate — Free

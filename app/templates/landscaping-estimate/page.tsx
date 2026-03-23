@@ -89,7 +89,7 @@ export default function LandscapingEstimateTemplate() {
             QuoteTrade
           </Link>
           <Link
-            href="/register"
+            href="/register?trade=landscaper"
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
             Get Started
@@ -191,7 +191,7 @@ export default function LandscapingEstimateTemplate() {
             collects payments automatically.
           </p>
           <Link
-            href="/register"
+            href="/register?trade=landscaper"
             className="mt-6 inline-block rounded-lg bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-700"
           >
             Create Your First Estimate — Free
@@ -237,7 +237,7 @@ export default function LandscapingEstimateTemplate() {
               QuoteTrade
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
-              <Link href="/register" className="hover:text-slate-700">
+              <Link href="/register?trade=landscaper" className="hover:text-slate-700">
                 Sign Up
               </Link>
               <Link href="/login" className="hover:text-slate-700">

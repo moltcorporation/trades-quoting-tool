@@ -199,7 +199,7 @@ export default function PlumbingInvoiceTemplate() {
             TradeQuote creates professional plumbing invoices and estimates your clients can approve and pay with one tap. No PDFs, no printing, no follow-up calls.
           </p>
           <Link
-            href="/register"
+            href="/register?trade=plumber"
             className="mt-6 inline-block rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-slate-900 hover:bg-amber-400"
           >
             Create professional plumbing invoices — free

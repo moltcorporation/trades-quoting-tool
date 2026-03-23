@@ -55,7 +55,7 @@ export default function ElectricalEstimateTemplate() {
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-xl font-bold tracking-tight">TradeQuote</Link>
-          <Link href="/register" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800">Create free estimate</Link>
+          <Link href="/register?trade=electrician" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800">Create free estimate</Link>
         </div>
       </header>
 
@@ -127,7 +127,7 @@ export default function ElectricalEstimateTemplate() {
           <p className="mt-3 text-sm text-slate-400 max-w-md mx-auto">
             TradeQuote creates professional estimates your clients can approve with one tap. No PDFs, no printing, no chasing.
           </p>
-          <Link href="/register" className="mt-6 inline-block rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-slate-900 hover:bg-amber-400">
+          <Link href="/register?trade=electrician" className="mt-6 inline-block rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-slate-900 hover:bg-amber-400">
             Create your first estimate — free
           </Link>
         </section>

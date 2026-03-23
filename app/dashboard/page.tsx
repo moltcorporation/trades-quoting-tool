@@ -8,6 +8,26 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { checkProAccess } from "@/lib/plans";
 
+function getProfileCompletion(user: {
+  name: string | null;
+  businessName: string | null;
+  phone: string | null;
+  city: string | null;
+  state: string | null;
+  tradeType: string | null;
+}) {
+  const fields = [
+    { key: "name", label: "Your name", done: !!user.name },
+    { key: "businessName", label: "Business name", done: !!user.businessName },
+    { key: "tradeType", label: "Trade type", done: !!user.tradeType },
+    { key: "city", label: "City", done: !!user.city },
+    { key: "state", label: "State", done: !!user.state },
+    { key: "phone", label: "Phone number", done: !!user.phone },
+  ];
+  const completed = fields.filter((f) => f.done).length;
+  return { fields, completed, total: fields.length, percent: Math.round((completed / fields.length) * 100) };
+}
+
 export default async function DashboardPage() {
   const session = await getSession();
   if (!session) redirect("/login");
@@ -56,6 +76,8 @@ export default async function DashboardPage() {
     { label: "Approved", value: approvedQuotes.value, href: "/dashboard/quotes" },
   ];
 
+  const profile = getProfileCompletion(user);
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -72,6 +94,39 @@ export default async function DashboardPage() {
           New Quote
         </Link>
       </div>
+
+      {/* Profile completion progress */}
+      {profile.percent < 100 && (
+        <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-sm font-medium text-amber-900">
+              Profile {profile.percent}% complete
+            </p>
+            <Link
+              href="/dashboard/settings"
+              className="text-xs font-medium text-amber-700 hover:text-amber-800"
+            >
+              Complete setup &rarr;
+            </Link>
+          </div>
+          <div className="h-2 bg-amber-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-amber-500 rounded-full transition-all"
+              style={{ width: `${profile.percent}%` }}
+            />
+          </div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {profile.fields.filter((f) => !f.done).map((f) => (
+              <span
+                key={f.key}
+                className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs text-amber-800"
+              >
+                + {f.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         {stats.map((stat) => (
@@ -127,39 +182,33 @@ export default async function DashboardPage() {
       </div>
 
       {totalQuotes.value === 0 && (
-        <>
-          <div className="mt-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-8 text-center">
-            <h2 className="text-lg font-bold text-zinc-900">
-              Welcome! Let&apos;s get your first quote out in under 3 minutes.
-            </h2>
-            <p className="mt-2 text-sm text-zinc-600">
-              Our quick setup wizard will walk you through creating and sending
-              your first professional quote.
-            </p>
+        <div className="mt-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-8 text-center">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+            <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </div>
+          <h2 className="text-lg font-bold text-zinc-900">
+            Create your first quote
+          </h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            Build a professional quote in under 3 minutes. Your client approves with one tap.
+          </p>
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/dashboard/onboarding"
-              className="mt-4 inline-block rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
+              className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
             >
-              Start Setup Wizard
+              Guided Setup (2 min)
             </Link>
-          </div>
-
-          <div className="mt-4 rounded-xl border border-zinc-200 bg-white p-8 text-center">
-            <h2 className="text-lg font-semibold text-zinc-900">
-              Or create a quote directly
-            </h2>
-            <p className="mt-2 text-sm text-zinc-500">
-              Build a professional quote in minutes. Your client approves with one
-              tap.
-            </p>
             <Link
               href="/dashboard/quotes/new"
-              className="mt-4 inline-block rounded-lg bg-zinc-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+              className="rounded-lg border border-zinc-300 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
             >
-              Create Quote
+              Create Quote Directly
             </Link>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
