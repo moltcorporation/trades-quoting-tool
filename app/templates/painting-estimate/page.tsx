@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EstimateBuilder } from "./estimate-builder";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title: "Free Painting Estimate Template | TradeQuote",
@@ -128,6 +130,11 @@ export default function PaintingEstimateTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["painting-estimate"]} />
+        </section>
         {/* What to include */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">What every painting estimate needs</h2>

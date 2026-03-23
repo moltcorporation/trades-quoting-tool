@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title: "Free Electrical Estimate Template | TradeQuote",
@@ -94,6 +96,11 @@ export default function ElectricalEstimateTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["electrical-estimate"]} />
+        </section>
         {/* What to include */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">What every electrical estimate needs</h2>

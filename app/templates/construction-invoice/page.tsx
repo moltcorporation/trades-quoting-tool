@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InvoiceGenerator } from "./invoice-generator";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title: "Free Construction Invoice Template | TradeQuote",
@@ -137,6 +139,11 @@ export default function ConstructionInvoiceTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["construction-invoice"]} />
+        </section>
         {/* What to include */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">What every construction invoice needs</h2>

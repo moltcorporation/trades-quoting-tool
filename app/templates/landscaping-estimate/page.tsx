@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EstimateBuilder from "./estimate-builder";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title:
@@ -174,6 +176,11 @@ export default function LandscapingEstimateTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["landscaping-estimate"]} />
+        </section>
         {/* CTA Section */}
         <section className="mt-16 rounded-2xl bg-slate-900 px-8 py-12 text-center">
           <h2 className="text-2xl font-bold text-white">
