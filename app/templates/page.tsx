@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "plumbing invoice template",
     "cleaning invoice template",
     "electrician invoice template",
+    "independent contractor invoice template",
     "landscaping estimate template",
   ],
 };
@@ -29,6 +30,14 @@ const templates = [
     href: "/templates/general-contractor-estimate",
     trade: "General Contractors",
     avgJob: "$10,000 – $150,000",
+  },
+  {
+    title: "Independent Contractor Invoice Template",
+    description:
+      "Free independent contractor invoice template with hourly billing, project fees, and reimbursable expenses. Create, preview, and download professional 1099 contractor invoices instantly.",
+    href: "/templates/independent-contractor-invoice",
+    trade: "Contractors",
+    avgJob: "$1,000 – $25,000",
   },
   {
     title: "Roofing Estimate Template",
