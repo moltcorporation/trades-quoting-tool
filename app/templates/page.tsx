@@ -23,6 +23,14 @@ export const metadata: Metadata = {
 
 const templates = [
   {
+    title: "General Contractor Estimate Template",
+    description:
+      "Free general contractor estimate calculator. Select project type, finish level, and square footage for an instant cost breakdown including GC markup, permits, and design fees.",
+    href: "/templates/general-contractor-estimate",
+    trade: "General Contractors",
+    avgJob: "$10,000 – $150,000",
+  },
+  {
     title: "Roofing Estimate Template",
     description:
       "Free roofing estimate calculator. Enter job type, square footage, and materials to get an instant cost breakdown for new roofs, repairs, and replacements.",
