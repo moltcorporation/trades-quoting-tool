@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "construction billing invoice template",
     "painting estimate template",
     "exterior painting estimate template",
+    "flooring estimate template",
+    "flooring installation estimate",
   ],
 };
 
@@ -162,6 +164,14 @@ const templates = [
     href: "/templates/electrician-invoice",
     trade: "Electricians",
     avgJob: "$200 – $3,000",
+  },
+  {
+    title: "Flooring Estimate Template",
+    description:
+      "Free flooring estimate template for hardwood, tile, LVP, carpet, and laminate installations. Calculate costs per square foot with subfloor prep and material breakdowns.",
+    href: "/templates/flooring-estimate",
+    trade: "Flooring",
+    avgJob: "$3,000 – $20,000",
   },
   {
     title: "Landscaping Estimate Template",
