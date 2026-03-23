@@ -12,10 +12,19 @@ export const metadata: Metadata = {
     "electrician quote template",
     "free estimate template",
     "contractor estimate template",
+    "handyman invoice template",
   ],
 };
 
 const templates = [
+  {
+    title: "Handyman Invoice Template",
+    description:
+      "Free handyman invoice template with an inline generator. Add services, hours, rates, and materials — then preview and download as PDF.",
+    href: "/templates/handyman-invoice",
+    trade: "Handymen",
+    avgJob: "$150 – $500",
+  },
   {
     title: "Plumbing Estimate Template",
     description:
