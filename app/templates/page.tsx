@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "roofing estimate template",
     "handyman invoice template",
     "plumbing invoice template",
+    "painting estimate template",
   ],
 };
 
@@ -66,6 +67,14 @@ const templates = [
     href: "/templates/electrical-estimate",
     trade: "Electricians",
     avgJob: "$300 – $5,000",
+  },
+  {
+    title: "Painting Estimate Template",
+    description:
+      "Free painting estimate template for interior and exterior jobs. Calculate labor per square foot, materials, and surface prep costs.",
+    href: "/templates/painting-estimate",
+    trade: "Painters",
+    avgJob: "$1,500 – $8,000",
   },
 ];
 
