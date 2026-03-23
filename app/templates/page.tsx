@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "roofing estimate template",
     "handyman invoice template",
     "plumbing invoice template",
+    "cleaning invoice template",
+    "electrician invoice template",
+    "landscaping estimate template",
   ],
 };
 
@@ -90,6 +93,30 @@ const templates = [
     href: "/templates/pressure-washing-estimate",
     trade: "Pressure Washing",
     avgJob: "$150 – $800",
+  },
+  {
+    title: "Cleaning Invoice Template",
+    description:
+      "Free cleaning invoice template for house cleaning, carpet cleaning, and commercial cleaning businesses. Create and download professional invoices instantly.",
+    href: "/templates/cleaning-invoice",
+    trade: "Cleaning",
+    avgJob: "$100 – $500",
+  },
+  {
+    title: "Electrician Invoice Template",
+    description:
+      "Free electrician invoice template with service types, materials, labor hours, and permit fees. Create and download professional electrical invoices instantly.",
+    href: "/templates/electrician-invoice",
+    trade: "Electricians",
+    avgJob: "$200 – $3,000",
+  },
+  {
+    title: "Landscaping Estimate Template",
+    description:
+      "Free landscaping estimate template for lawn care, hardscaping, and landscaping projects. Build custom estimates with materials, labor, and equipment costs.",
+    href: "/templates/landscaping-estimate",
+    trade: "Landscaping",
+    avgJob: "$500 – $15,000",
   },
 ];
 
