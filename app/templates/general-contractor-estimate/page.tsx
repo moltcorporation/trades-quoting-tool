@@ -50,6 +50,8 @@ const tradeTemplates = [
   { title: "Independent Contractor Invoice", href: "/templates/independent-contractor-invoice", desc: "Invoices for independent contractors" },
   { title: "Auto Body Repair Invoice", href: "/templates/auto-body-repair-invoice", desc: "Collision repair, paint, and panel work" },
   { title: "Pressure Washing Estimate", href: "/templates/pressure-washing-estimate", desc: "Driveways, decks, siding, and patios" },
+  { title: "Tree Service Invoice", href: "/templates/tree-service-invoice", desc: "Tree removal, trimming, and stump grinding" },
+  { title: "Flooring Estimate", href: "/templates/flooring-estimate", desc: "Hardwood, tile, LVP, carpet, and laminate" },
 ];
 
 const faqItems = [
@@ -72,6 +74,26 @@ const faqItems = [
     question: "What is the difference between an estimate and a bid?",
     answer:
       "An estimate is an approximation that can change as the project develops — common for renovations where hidden conditions (mold, outdated wiring) are discovered during demo. A bid or fixed-price proposal locks in a total cost; the GC absorbs overruns. Estimates are typical for remodels; bids are typical for new construction where the scope is fully defined. Most GCs start with an estimate and convert to a fixed price after detailed planning.",
+  },
+  {
+    question: "How long should a general contractor estimate be valid?",
+    answer:
+      "Most GC estimates are valid for 30 days. Material prices fluctuate — lumber, copper, and concrete can swing 10-20% in a single quarter. After 30 days, a GC may need to re-price materials. For large projects ($100K+), some contractors limit validity to 14 days. Always include the expiration date on the estimate and specify that pricing is subject to change after that date.",
+  },
+  {
+    question: "Should I get multiple general contractor estimates?",
+    answer:
+      "Yes — get at least three estimates from licensed, insured GCs. Provide the same scope and specifications to each so you can compare apples to apples. Be wary of any estimate that is significantly lower than the others — it may mean the GC is cutting corners, using lower-quality materials, or planning to hit you with change orders once the project is underway.",
+  },
+  {
+    question: "What is a typical GC markup percentage?",
+    answer:
+      "General contractors typically mark up the total cost of labor, materials, and subcontractors by 15-25%. This covers project management, scheduling, coordination, insurance, warranty, and profit. A 20% markup on a $40,000 project adds $8,000 in GC fees. Some GCs use cost-plus contracts (actual costs plus a fixed percentage) while others provide a fixed-price bid that includes their markup.",
+  },
+  {
+    question: "What permits does a general contractor handle?",
+    answer:
+      "A GC handles all permits required for the project — building permits, electrical permits, plumbing permits, HVAC permits, and any specialty permits like demolition or dumpster placement. Permit costs vary by jurisdiction but typically run $500-$3,000 for a residential remodel. The GC also coordinates all required inspections (rough-in, framing, final) and ensures the project passes code.",
   },
 ];
 
