@@ -241,14 +241,23 @@ export default function HVACEstimateTemplate() {
         {/* Related templates */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">More estimate templates</h2>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link href="/templates/roofing-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+          <p className="mt-2 text-sm text-slate-500">HVAC is often part of larger renovation projects. Use these templates for related work:</p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Link href="/templates/roofing-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">Roofing Estimate Template</h3>
               <p className="mt-1 text-sm text-slate-500">For new roofs, repairs, and full replacements</p>
             </Link>
-            <Link href="/templates/electrical-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+            <Link href="/templates/electrical-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">Electrical Estimate Template</h3>
               <p className="mt-1 text-sm text-slate-500">For panel upgrades, wiring, and installations</p>
+            </Link>
+            <Link href="/templates/plumbing-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Plumbing Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For water, gas, and drainage systems</p>
+            </Link>
+            <Link href="/templates/general-contractor-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">General Contractor Estimate</h3>
+              <p className="mt-1 text-sm text-slate-500">For coordinating multi-trade projects</p>
             </Link>
           </div>
         </section>

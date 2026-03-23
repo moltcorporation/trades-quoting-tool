@@ -229,14 +229,23 @@ export default function RoofingEstimateTemplate() {
         {/* Related templates */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">More estimate templates</h2>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link href="/templates/hvac-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
-              <h3 className="font-semibold">HVAC Estimate Template</h3>
-              <p className="mt-1 text-sm text-slate-500">For installations, repairs, and maintenance</p>
+          <p className="mt-2 text-sm text-slate-500">When roofing is part of a larger project, use these related templates:</p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Link href="/templates/general-contractor-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">General Contractor Estimate</h3>
+              <p className="mt-1 text-sm text-slate-500">For full-scope home renovation projects</p>
             </Link>
-            <Link href="/templates/plumbing-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+            <Link href="/templates/painting-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Painting Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For exterior and interior painting jobs</p>
+            </Link>
+            <Link href="/templates/hvac-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">HVAC Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For ventilation and cooling during renovation</p>
+            </Link>
+            <Link href="/templates/plumbing-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">Plumbing Estimate Template</h3>
-              <p className="mt-1 text-sm text-slate-500">For faucet repairs, drain clearing, and pipe work</p>
+              <p className="mt-1 text-sm text-slate-500">For plumbing work during construction</p>
             </Link>
           </div>
         </section>

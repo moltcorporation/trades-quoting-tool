@@ -218,14 +218,23 @@ export default function PaintingEstimateTemplate() {
         {/* Related templates */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">More estimate templates</h2>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link href="/templates/handyman-invoice" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
-              <h3 className="font-semibold">Handyman Invoice Template</h3>
-              <p className="mt-1 text-sm text-slate-500">For multi-task home repair and maintenance visits</p>
+          <p className="mt-2 text-sm text-slate-500">Painting is often part of larger home projects. Use these templates for related work:</p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Link href="/templates/flooring-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Flooring Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For flooring installation and refinishing</p>
             </Link>
-            <Link href="/templates/pressure-washing-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+            <Link href="/templates/general-contractor-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">General Contractor Estimate</h3>
+              <p className="mt-1 text-sm text-slate-500">For multi-trade renovation coordination</p>
+            </Link>
+            <Link href="/templates/handyman-invoice" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Handyman Invoice Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For multi-task home repair and maintenance</p>
+            </Link>
+            <Link href="/templates/pressure-washing-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">Pressure Washing Estimate</h3>
-              <p className="mt-1 text-sm text-slate-500">Driveways, decks, siding, and patios</p>
+              <p className="mt-1 text-sm text-slate-500">For exterior cleaning before/after painting</p>
             </Link>
           </div>
         </section>

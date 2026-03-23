@@ -224,14 +224,23 @@ export default function FlooringEstimateTemplate() {
         {/* Related templates */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">More estimate templates</h2>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link href="/templates/general-contractor-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+          <p className="mt-2 text-sm text-slate-500">Flooring is often part of larger renovation projects. Use these templates for related work:</p>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Link href="/templates/general-contractor-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">General Contractor Estimate</h3>
-              <p className="mt-1 text-sm text-slate-500">For multi-trade renovation and remodeling projects</p>
+              <p className="mt-1 text-sm text-slate-500">For multi-trade renovation coordination</p>
             </Link>
-            <Link href="/templates/painting-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+            <Link href="/templates/painting-estimate" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
               <h3 className="font-semibold">Painting Estimate Template</h3>
-              <p className="mt-1 text-sm text-slate-500">Interior and exterior painting by room and surface</p>
+              <p className="mt-1 text-sm text-slate-500">Complements flooring with wall finishing</p>
+            </Link>
+            <Link href="/templates/construction-invoice" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Construction Invoice Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For large-scale flooring projects with phases</p>
+            </Link>
+            <Link href="/templates/handyman-invoice" className="rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Handyman Invoice Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For smaller flooring repairs and finishing work</p>
             </Link>
           </div>
         </section>
