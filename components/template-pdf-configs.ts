@@ -388,6 +388,31 @@ export const templateConfigs: Record<string, TemplateDownloadConfig> = {
     notes: "Monthly billing — due within 15 days. Service every Thursday (weather permitting, makeup day = Friday). Annual contract discount: 10% off monthly rate. Includes all equipment, fuel, and materials. Does not include irrigation repair, tree trimming, or mulch installation.",
   },
 
+  "flooring-estimate": {
+    slug: "flooring-estimate",
+    title: "Flooring Estimate",
+    companyName: "Precision Floors LLC",
+    companyTagline: "Licensed & Insured | All Flooring Types",
+    documentNumber: "EST-FL-2026-117",
+    clientName: "Garcia Family",
+    clientAddress: "245 Birch Lane, Columbus, OH 43215",
+    jobDescription: "Multi-room flooring installation — kitchen tile, living room hardwood, bedrooms LVP",
+    lineItems: [
+      { description: "Kitchen — porcelain tile 12x24 (320 sq ft + 15% waste)", amount: "$4,480" },
+      { description: "Living room — red oak hardwood 5\" plank (450 sq ft + 10% waste)", amount: "$6,300" },
+      { description: "Master bedroom — LVP 20mil wear layer (280 sq ft + 10% waste)", amount: "$2,100" },
+      { description: "Hallway — LVP 20mil wear layer (120 sq ft + 10% waste)", amount: "$900" },
+      { description: "Subfloor leveling — kitchen (self-leveling compound)", amount: "$480" },
+      { description: "Remove existing flooring — all rooms", amount: "$940" },
+      { description: "Transitions, trim, quarter-round (14 doorways + 220 LF)", amount: "$680" },
+    ],
+    subtotal: "$15,880",
+    tax: "$1,270",
+    total: "$17,150",
+    notes: "Payment: 40% deposit at signing, 30% at materials delivery, 30% on completion. Price includes 10–15% material waste factor. Hardwood requires 48-hour acclimation before installation. Tile grout cure time: 24 hours before foot traffic. 2-year workmanship warranty on all installations. Does not include furniture moving, appliance disconnection, or baseboard painting.",
+    validityDays: 30,
+  },
+
   "tree-service-invoice": {
     slug: "tree-service-invoice",
     title: "Tree Service Invoice",
