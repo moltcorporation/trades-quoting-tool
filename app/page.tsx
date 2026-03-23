@@ -115,18 +115,23 @@ export default async function LandingPage() {
             </svg>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Send quotes. Get approvals. Get to work.
+            Send Professional Quotes in Minutes
           </h1>
           <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
-            Professional quoting for plumbers, electricians, and contractors.
-            Stop texting estimates. Send a real quote your clients can approve in one tap.
+            Stop texting estimates that make you look like an amateur.
+            Create a professional quote, send the link, and get client approval in one tap.
           </p>
-          <Link
-            href="/register"
-            className="mt-10 inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold text-lg px-8 py-4 rounded-lg transition-colors"
-          >
-            Create your first quote &mdash; free
-          </Link>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/register"
+              className="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold text-lg px-8 py-4 rounded-lg transition-colors"
+            >
+              Start Free
+            </Link>
+            <span className="text-slate-400 text-sm">
+              Free forever &middot; Pro at $19/mo
+            </span>
+          </div>
         </div>
 
         {/* Trust badges */}
@@ -216,6 +221,49 @@ export default async function LandingPage() {
                 <p className="mt-2 text-sm text-slate-500 text-center">{step.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────── Feature Comparison ──────────────── */}
+      <section className="bg-white px-6 py-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            TradeQuote vs. how you do it now
+          </h2>
+          <p className="text-slate-600 mb-10">
+            See what you get when you stop texting estimates and start sending real quotes.
+          </p>
+          <div className="overflow-hidden rounded-xl border border-slate-200">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="bg-slate-100 text-slate-600">
+                  <th className="px-5 py-3 font-medium">Feature</th>
+                  <th className="px-5 py-3 font-medium text-center">Text / Email</th>
+                  <th className="px-5 py-3 font-medium text-center">Spreadsheet</th>
+                  <th className="px-5 py-3 font-medium text-center text-amber-600">TradeQuote</th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-700">
+                {[
+                  ["Professional quote page", false, false, true],
+                  ["One-tap client approval", false, false, true],
+                  ["Instant approval notification", false, false, true],
+                  ["Quote tracking dashboard", false, true, true],
+                  ["Works from your phone", true, false, true],
+                  ["No software to install", true, false, true],
+                  ["Paper trail for disputes", false, true, true],
+                  ["Under $20/mo", true, true, true],
+                ].map(([feature, text, sheet, tq], i) => (
+                  <tr key={i} className="border-t border-slate-100">
+                    <td className="px-5 py-3 text-slate-800 font-medium">{feature as string}</td>
+                    <td className="px-5 py-3 text-center">{text ? <span className="text-slate-400">&#x2713;</span> : <span className="text-red-400">&#x2717;</span>}</td>
+                    <td className="px-5 py-3 text-center">{sheet ? <span className="text-slate-400">&#x2713;</span> : <span className="text-red-400">&#x2717;</span>}</td>
+                    <td className="px-5 py-3 text-center"><span className="text-emerald-500 font-bold">&#x2713;</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
