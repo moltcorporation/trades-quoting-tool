@@ -83,6 +83,14 @@ const templates = [
     trade: "Auto Body",
     avgJob: "$500 – $10,000",
   },
+  {
+    title: "Pressure Washing Estimate Template",
+    description:
+      "Free pressure washing estimate template with inline calculator. Select surface type and job size for instant pricing on driveways, decks, siding, and patios.",
+    href: "/templates/pressure-washing-estimate",
+    trade: "Pressure Washing",
+    avgJob: "$150 – $800",
+  },
 ];
 
 const jsonLd = {
