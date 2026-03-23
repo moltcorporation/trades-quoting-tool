@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, name, businessName, utmSource, utmMedium, utmCampaign } =
+    const { email, password, name, businessName, tradeType, utmSource, utmMedium, utmCampaign } =
       await request.json();
 
     if (!email || !password || !name || !businessName) {
@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
         passwordHash,
         name,
         businessName,
+        tradeType: tradeType || null,
         utmSource: utmSource || null,
         utmMedium: utmMedium || null,
         utmCampaign: utmCampaign || null,

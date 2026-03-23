@@ -1,13 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+const tradeTypes = [
+  { value: "plumber", label: "Plumber" },
+  { value: "electrician", label: "Electrician" },
+  { value: "hvac", label: "HVAC" },
+  { value: "handyman", label: "Handyman" },
+  { value: "painter", label: "Painter" },
+  { value: "roofer", label: "Roofer" },
+  { value: "landscaper", label: "Landscaper" },
+  { value: "cleaner", label: "Cleaner" },
+  { value: "other", label: "Other" },
+];
+
 export default function RegisterPage() {
+  return (
+    <Suspense>
+      <RegisterForm />
+    </Suspense>
+  );
+}
+
+function RegisterForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [tradeType, setTradeType] = useState("");
+
+  // Pre-select trade type from URL param (e.g. /register?trade=plumber)
+  useEffect(() => {
+    const trade = searchParams.get("trade");
+    if (trade) {
+      const match = tradeTypes.find(
+        (t) => t.value === trade.toLowerCase() || t.label.toLowerCase() === trade.toLowerCase()
+      );
+      if (match) setTradeType(match.value);
+    }
+  }, [searchParams]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -42,6 +75,7 @@ export default function RegisterPage() {
         password: data.get("password"),
         name: data.get("name"),
         businessName: data.get("businessName"),
+        tradeType: tradeType || undefined,
         utmSource,
         utmMedium,
         utmCampaign,
@@ -84,6 +118,22 @@ export default function RegisterPage() {
           <div>
             <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">Business name</label>
             <input type="text" name="businessName" id="businessName" required placeholder="e.g. Mike's Plumbing" className={inputClass} />
+          </div>
+          <div>
+            <label htmlFor="tradeType" className="block text-sm font-medium text-slate-700 mb-1">Trade type</label>
+            <select
+              id="tradeType"
+              value={tradeType}
+              onChange={(e) => setTradeType(e.target.value)}
+              className={inputClass}
+            >
+              <option value="">Select your trade</option>
+              {tradeTypes.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>

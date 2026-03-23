@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -69,12 +69,29 @@ export default function OnboardingPage() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [profileLoaded, setProfileLoaded] = useState(false);
 
   // Step 1 fields
   const [businessName, setBusinessName] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [tradeType, setTradeType] = useState("");
+
+  // Pre-fill from user profile (trade type set during registration)
+  useEffect(() => {
+    fetch("/api/profile")
+      .then((r) => r.ok ? r.json() : null)
+      .then((profile) => {
+        if (profile) {
+          if (profile.businessName) setBusinessName(profile.businessName);
+          if (profile.city) setCity(profile.city);
+          if (profile.state) setState(profile.state);
+          if (profile.tradeType) setTradeType(profile.tradeType);
+        }
+        setProfileLoaded(true);
+      })
+      .catch(() => setProfileLoaded(true));
+  }, []);
 
   // Step 2 - Pre-filled sample quote
   const [clientName, setClientName] = useState("Sample Client");
