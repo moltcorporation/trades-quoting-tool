@@ -126,3 +126,19 @@ export const conversionEvents = pgTable(
     index("conversion_events_created_at_idx").on(table.createdAt),
   ]
 );
+
+export const templateLeads = pgTable(
+  "template_leads",
+  {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => nanoid()),
+    email: text("email").notNull(),
+    templateSlug: text("template_slug").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("template_leads_email_idx").on(table.email),
+    index("template_leads_slug_idx").on(table.templateSlug),
+  ]
+);

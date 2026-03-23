@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EstimateCalculator } from "./estimate-calculator";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title: "Free Pressure Washing Estimate Template | TradeQuote",
@@ -137,6 +139,11 @@ export default function PressureWashingEstimateTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["pressure-washing-estimate"]} />
+        </section>
         {/* What to include */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">What every pressure washing estimate needs</h2>

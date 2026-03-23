@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EstimateGenerator } from "./estimate-generator";
+import { TemplateDownloadForm } from "@/components/template-download-form";
+import { templateConfigs } from "@/components/template-pdf-configs";
 
 export const metadata: Metadata = {
   title: "Free General Contractor Estimate Template | TradeQuote",
@@ -158,6 +160,11 @@ export default function GeneralContractorEstimateTemplate() {
           </div>
         </section>
 
+
+        {/* Download template */}
+        <section className="mt-12">
+          <TemplateDownloadForm config={templateConfigs["general-contractor-estimate"]} />
+        </section>
         {/* What to include */}
         <section className="mt-12">
           <h2 className="text-xl font-bold">What every GC estimate needs</h2>
