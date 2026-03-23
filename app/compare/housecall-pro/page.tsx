@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Housecall Pro Alternative — Simple Quoting for Solo Trades",
   description:
-    "Housecall Pro starts at $79/mo with features you'll never use. QuoteTrade gives you quote→approve→track simplicity for $19/mo.",
+    "Housecall Pro starts at $79/mo with features you'll never use. TradeQuote gives you quote→approve→track simplicity for $19/mo.",
   keywords: [
     "Housecall Pro alternative",
     "Housecall Pro pricing",
@@ -38,15 +38,15 @@ const jsonLd = {
       name: "What's the simplest alternative to Housecall Pro?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "QuoteTrade focuses on the core workflow solo tradespeople need: create a quote, send it to your client, and let them approve online. No bloat, no complexity, just $19/month.",
+        text: "TradeQuote focuses on the core workflow solo tradespeople need: create a quote, send it to your client, and let them approve online. No bloat, no complexity, just $19/month.",
       },
     },
     {
       "@type": "Question",
-      name: "Can I switch from Housecall Pro to QuoteTrade?",
+      name: "Can I switch from Housecall Pro to TradeQuote?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. You can sign up for QuoteTrade and start sending quotes immediately. There's no migration needed — just start creating quotes for new jobs.",
+        text: "Yes. You can sign up for TradeQuote and start sending quotes immediately. There's no migration needed — just start creating quotes for new jobs.",
       },
     },
   ],
@@ -112,7 +112,7 @@ export default function HousecallProComparison() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -169,7 +169,7 @@ export default function HousecallProComparison() {
                     You need it?
                   </th>
                   <th className="px-4 py-3 text-center font-medium text-blue-600">
-                    QuoteTrade
+                    TradeQuote
                   </th>
                   <th className="px-4 py-3 text-center font-medium text-slate-600">
                     Housecall Pro
@@ -217,7 +217,7 @@ export default function HousecallProComparison() {
               </ul>
             </div>
             <div className="rounded-xl border-2 border-blue-600 bg-blue-50/30 p-6">
-              <h3 className="font-medium text-blue-600">QuoteTrade</h3>
+              <h3 className="font-medium text-blue-600">TradeQuote</h3>
               <div className="mt-2 text-3xl font-bold text-slate-900">
                 $19<span className="text-lg font-normal text-slate-500">/mo</span>
               </div>
@@ -267,7 +267,7 @@ export default function HousecallProComparison() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -291,7 +291,7 @@ export default function HousecallProComparison() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Write a Plumbing Estimate: Template + Tips | QuoteTrade",
+  title: "How to Write a Plumbing Estimate: Template + Tips | TradeQuote",
   description:
     "Learn how to write a professional plumbing estimate with our free template. Includes materials breakdown, labor costs, and tips to avoid common quoting mistakes.",
   keywords: [
@@ -108,7 +108,7 @@ export default function PlumbingEstimateGuide() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -434,7 +434,7 @@ export default function PlumbingEstimateGuide() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -461,7 +461,7 @@ export default function PlumbingEstimateGuide() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>

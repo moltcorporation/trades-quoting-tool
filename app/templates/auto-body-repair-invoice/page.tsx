@@ -86,7 +86,7 @@ export default function AutoBodyRepairInvoiceTemplate() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -232,7 +232,7 @@ export default function AutoBodyRepairInvoiceTemplate() {
             Ready to streamline your body shop?
           </h2>
           <p className="mt-2 text-lg text-slate-300">
-            QuoteTrade automates invoicing, payment collection, and job tracking
+            TradeQuote automates invoicing, payment collection, and job tracking
             for auto body professionals.
           </p>
           <Link
@@ -279,7 +279,7 @@ export default function AutoBodyRepairInvoiceTemplate() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -300,7 +300,7 @@ export default function AutoBodyRepairInvoiceTemplate() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>

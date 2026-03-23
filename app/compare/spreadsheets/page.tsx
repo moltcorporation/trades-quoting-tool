@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free Estimate Template for Plumbers & Electricians | QuoteTrade",
+  title: "Free Estimate Template for Plumbers & Electricians | TradeQuote",
   description:
     "Spreadsheet estimates are free but unprofessional. Send client-facing quotes with approve buttons and status tracking for just $19/mo.",
   keywords: [
@@ -38,7 +38,7 @@ const jsonLd = {
       name: "Is there a free estimate template for plumbers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Many free templates exist online, but they only solve the formatting problem. They don't help you collect approvals, track status, or get paid faster. QuoteTrade handles the entire workflow for $19/month.",
+        text: "Many free templates exist online, but they only solve the formatting problem. They don't help you collect approvals, track status, or get paid faster. TradeQuote handles the entire workflow for $19/month.",
       },
     },
     {
@@ -71,7 +71,7 @@ export default function SpreadsheetsComparison() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -146,7 +146,7 @@ export default function SpreadsheetsComparison() {
 
             <div className="rounded-xl border-2 border-blue-600 bg-blue-50/30 p-6">
               <h3 className="text-lg font-semibold text-blue-700">
-                QuoteTrade
+                TradeQuote
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-slate-600">
                 <li className="flex items-start gap-3">
@@ -234,7 +234,7 @@ export default function SpreadsheetsComparison() {
             admin work.
           </p>
           <p className="mt-4 text-slate-600 leading-7">
-            QuoteTrade costs $19/month. If it saves you even one hour of admin
+            TradeQuote costs $19/month. If it saves you even one hour of admin
             time, it&apos;s paid for itself.
           </p>
         </section>
@@ -275,7 +275,7 @@ export default function SpreadsheetsComparison() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -299,7 +299,7 @@ export default function SpreadsheetsComparison() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>

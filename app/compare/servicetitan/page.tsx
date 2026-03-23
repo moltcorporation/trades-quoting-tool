@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "ServiceTitan Alternative for Solo Tradespeople | QuoteTrade",
+  title: "ServiceTitan Alternative for Solo Tradespeople | TradeQuote",
   description:
-    "ServiceTitan costs $300+/mo and is built for large companies. QuoteTrade gives solo tradespeople professional quoting and approval tracking for just $19/mo.",
+    "ServiceTitan costs $300+/mo and is built for large companies. TradeQuote gives solo tradespeople professional quoting and approval tracking for just $19/mo.",
   keywords: [
     "ServiceTitan alternative",
     "ServiceTitan for small business",
@@ -30,7 +30,7 @@ const jsonLd = {
       name: "What is the cheapest alternative to ServiceTitan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "QuoteTrade offers professional quoting and approval tracking for solo tradespeople at $19/month — a fraction of ServiceTitan's $300+/month price tag.",
+        text: "TradeQuote offers professional quoting and approval tracking for solo tradespeople at $19/month — a fraction of ServiceTitan's $300+/month price tag.",
       },
     },
     {
@@ -38,7 +38,7 @@ const jsonLd = {
       name: "Can I send professional quotes without ServiceTitan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. QuoteTrade lets you create, send, and track professional quotes in minutes. Clients can approve online without you needing enterprise-level software.",
+        text: "Yes. TradeQuote lets you create, send, and track professional quotes in minutes. Clients can approve online without you needing enterprise-level software.",
       },
     },
     {
@@ -51,7 +51,7 @@ const jsonLd = {
     },
     {
       "@type": "Question",
-      name: "Does QuoteTrade track quote status?",
+      name: "Does TradeQuote track quote status?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. You can see which quotes are pending, approved, or completed from your dashboard. Clients approve with one tap, and you get notified instantly.",
@@ -119,7 +119,7 @@ export default function ServiceTitanComparison() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -180,7 +180,7 @@ export default function ServiceTitanComparison() {
                     You need it?
                   </th>
                   <th className="px-4 py-3 text-center font-medium text-blue-600">
-                    QuoteTrade
+                    TradeQuote
                   </th>
                   <th className="px-4 py-3 text-center font-medium text-slate-600">
                     ServiceTitan
@@ -228,7 +228,7 @@ export default function ServiceTitanComparison() {
               </ul>
             </div>
             <div className="rounded-xl border-2 border-blue-600 bg-blue-50/30 p-6">
-              <h3 className="font-medium text-blue-600">QuoteTrade</h3>
+              <h3 className="font-medium text-blue-600">TradeQuote</h3>
               <div className="mt-2 text-3xl font-bold text-slate-900">
                 $19<span className="text-lg font-normal text-slate-500">/mo</span>
               </div>
@@ -278,7 +278,7 @@ export default function ServiceTitanComparison() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -302,7 +302,7 @@ export default function ServiceTitanComparison() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>

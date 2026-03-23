@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Professional Templates | QuoteTrade",
+  title: "Professional Templates | TradeQuote",
   description:
     "Free professional templates for landscaping estimates, cleaning invoices, and more.",
 };

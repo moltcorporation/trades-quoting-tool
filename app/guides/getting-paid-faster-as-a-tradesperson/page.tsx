@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Get Paid Faster as a Contractor or Handyman | QuoteTrade",
+  title: "How to Get Paid Faster as a Contractor or Handyman | TradeQuote",
   description:
     "5 proven strategies to collect payment faster as a tradesperson. Stop chasing invoices with professional quoting, deposits, and approve-then-pay workflows.",
   keywords: [
@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: "What payment methods should a handyman or contractor accept?",
     answer:
-      "Accept as many as possible: credit/debit cards, bank transfers (ACH), and digital wallets. The easier you make it to pay, the faster you'll get paid. Avoid cash-only or check-only — these create friction and delays. A tool like QuoteTrade lets clients pay by card directly through the quote link.",
+      "Accept as many as possible: credit/debit cards, bank transfers (ACH), and digital wallets. The easier you make it to pay, the faster you'll get paid. Avoid cash-only or check-only — these create friction and delays. A tool like TradeQuote lets clients pay by card directly through the quote link.",
   },
   {
     question:
@@ -98,7 +98,7 @@ export default function GettingPaidFasterGuide() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            QuoteTrade
+            TradeQuote
           </Link>
           <Link
             href="/register"
@@ -265,7 +265,7 @@ export default function GettingPaidFasterGuide() {
             How digital quoting tools help
           </h2>
           <p className="mt-4 text-slate-600 leading-7">
-            A digital quoting tool like QuoteTrade combines all five strategies
+            A digital quoting tool like TradeQuote combines all five strategies
             into a single workflow. You create a professional quote, send the
             client a link, they approve and pay through the same page — and you
             can track everything from a simple dashboard.
@@ -329,7 +329,7 @@ export default function GettingPaidFasterGuide() {
         <div className="mx-auto max-w-3xl px-6 py-8">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <Link href="/" className="text-sm font-semibold text-slate-900">
-              QuoteTrade
+              TradeQuote
             </Link>
             <div className="flex gap-6 text-sm text-slate-500">
               <Link href="/register" className="hover:text-slate-700">
@@ -356,7 +356,7 @@ export default function GettingPaidFasterGuide() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} QuoteTrade. All rights reserved.
+            &copy; {new Date().getFullYear()} TradeQuote. All rights reserved.
           </p>
         </div>
       </footer>
