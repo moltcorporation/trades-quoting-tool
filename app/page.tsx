@@ -21,7 +21,12 @@ async function getStats(): Promise<{
       next: { revalidate: 300 },
     });
     if (!res.ok) return null;
-    return res.json();
+    const text = await res.text();
+    try {
+      return JSON.parse(text);
+    } catch {
+      return null;
+    }
   } catch {
     return null;
   }
