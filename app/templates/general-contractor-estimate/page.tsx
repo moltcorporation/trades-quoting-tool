@@ -47,6 +47,9 @@ const tradeTemplates = [
   { title: "Landscaping Estimate", href: "/templates/landscaping-estimate", desc: "Lawn care, hardscaping, and landscape design" },
   { title: "Lawn Care Invoice", href: "/templates/lawn-care-invoice", desc: "Mowing, edging, and seasonal cleanup" },
   { title: "Cleaning Invoice", href: "/templates/cleaning-invoice", desc: "House cleaning and commercial cleaning" },
+  { title: "Painting Estimate", href: "/templates/painting-estimate", desc: "Interior and exterior painting projects" },
+  { title: "Construction Invoice", href: "/templates/construction-invoice", desc: "Billing for construction projects" },
+  { title: "Independent Contractor Invoice", href: "/templates/independent-contractor-invoice", desc: "Invoices for independent contractors" },
   { title: "Auto Body Repair Invoice", href: "/templates/auto-body-repair-invoice", desc: "Collision repair, paint, and panel work" },
   { title: "Pressure Washing Estimate", href: "/templates/pressure-washing-estimate", desc: "Driveways, decks, siding, and patios" },
 ];
@@ -74,7 +77,7 @@ const faqItems = [
   },
 ];
 
-const jsonLd = {
+const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqItems.map((faq) => ({
@@ -84,10 +87,41 @@ const jsonLd = {
   })),
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Free General Contractor Estimate Template",
+  description: "Free general contractor estimate template with inline calculator for kitchen remodels, additions, renovations, and more.",
+  provider: {
+    "@type": "Organization",
+    name: "TradeQuote",
+    url: "https://tradequote.com",
+  },
+  serviceType: "Estimate Template",
+  areaServed: "US",
+  isRelatedTo: tradeTemplates.map((t) => ({
+    "@type": "Service",
+    name: t.title,
+    url: `https://tradequote.com${t.href}`,
+  })),
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Tools", item: "https://tradequote.com" },
+    { "@type": "ListItem", position: 2, name: "Estimates", item: "https://tradequote.com/templates" },
+    { "@type": "ListItem", position: 3, name: "General Contractor", item: "https://tradequote.com/templates/general-contractor-estimate" },
+  ],
+};
+
 export default function GeneralContractorEstimateTemplate() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
@@ -97,6 +131,17 @@ export default function GeneralContractorEstimateTemplate() {
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-16">
+        {/* Breadcrumb navigation */}
+        <nav className="mb-6 text-sm text-slate-500" aria-label="Breadcrumb">
+          <ol className="flex items-center gap-1.5">
+            <li><Link href="/" className="hover:text-slate-700">Tools</Link></li>
+            <li aria-hidden="true">→</li>
+            <li><Link href="/templates" className="hover:text-slate-700">Estimates</Link></li>
+            <li aria-hidden="true">→</li>
+            <li className="text-slate-900 font-medium">General Contractor</li>
+          </ol>
+        </nav>
+
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Free General Contractor Estimate Template
         </h1>
