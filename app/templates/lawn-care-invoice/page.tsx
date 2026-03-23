@@ -46,6 +46,21 @@ const faqItems = [
     answer:
       "Yes, if you provide materials like fertilizer, grass seed, mulch, or weed treatment. List them as separate line items with quantity and cost. Most mowing-only services include fuel in the hourly rate, but specialized materials should be itemized.",
   },
+  {
+    question: "How do I invoice for lawn care add-on services?",
+    answer:
+      "List add-ons as separate line items below the base service. Common add-ons include aeration ($75–$200), overseeding ($100–$300), weed treatment ($50–$100), and mulch installation ($50–$150 per yard). This keeps your lawn service invoice template clear and helps clients see exactly what they're paying for.",
+  },
+  {
+    question: "What payment terms work best for lawn care businesses?",
+    answer:
+      "Net-15 or due-on-completion are standard for residential lawn care. For commercial accounts, Net-30 is common. Always state terms clearly on your invoice. Offering online payment (credit card or bank transfer) cuts average collection time from 23 days to 3 days.",
+  },
+  {
+    question: "Do I need a different invoice for commercial lawn care?",
+    answer:
+      "Commercial lawn care invoices follow the same format but typically include a PO number, property address or site ID, and contract reference. Commercial clients also expect itemized square footage pricing rather than hourly rates. Include your business license and insurance info on commercial invoices.",
+  },
 ];
 
 const jsonLd = [
