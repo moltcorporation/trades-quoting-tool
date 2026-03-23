@@ -22,11 +22,11 @@ const sampleLineItems = [
 
 const faqItems = [
   {
-    question: "What should a electrical estimate include?",
+    question: "What should an electrical estimate include?",
     answer: "A professional electrical estimate should include: your business name and contact info, client name and address, detailed description of work, line items for labor and materials separately, subtotal, tax, total, payment terms, and an expiration date (usually 30 days).",
   },
   {
-    question: "How do I price a electrical job?",
+    question: "How do I price an electrical job?",
     answer: "Most electricians charge $80–$160/hour for labor plus materials with a 15–30% markup. For fixed-price jobs, estimate hours needed, add materials cost, include markup, and add a 10% contingency for unexpected issues.",
   },
   {
@@ -135,6 +135,20 @@ export default function ElectricalEstimateTemplate() {
                 <p className="mt-2 text-sm text-slate-600">{faq.answer}</p>
               </div>
             ))}
+          </div>
+        </section>
+        {/* Related templates */}
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">More estimate templates</h2>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Link href="/templates/plumbing-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">Plumbing Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For faucet repairs, drain clearing, and pipe work</p>
+            </Link>
+            <Link href="/templates/hvac-estimate" className="flex-1 rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+              <h3 className="font-semibold">HVAC Estimate Template</h3>
+              <p className="mt-1 text-sm text-slate-500">For heating, cooling, and ventilation jobs</p>
+            </Link>
           </div>
         </section>
       </main>
