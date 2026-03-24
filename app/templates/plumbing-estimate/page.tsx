@@ -33,7 +33,7 @@ const faqItems = [
   },
   {
     question: "Should I give free estimates?",
-    answer: "For standard residential jobs (faucet repair, drain clearing, toilet install), free estimates are expected and help you win work. For complex jobs requiring on-site inspection (repiping, sewer lines), charging $50–$150 for a detailed estimate is reasonable.",
+    answer: "For standard residential jobs (faucet repair, drain clearing, toilet install), free estimates are expected and help you win work. For complex jobs requiring on-site inspection (repiping, sewer lines), charging $50–$150 for a detailed estimate is reasonable. On major renovations, coordinate with HVAC and electrical contractors to provide a complete scope.",
   },
 ];
 
@@ -119,6 +119,14 @@ export default function PlumbingEstimateTemplate() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Coordinating with other trades */}
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">Coordinating with other trades</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            On kitchen and bathroom renovations, you'll often work alongside <Link href="/templates/electrical-estimate" className="text-slate-600 underline hover:text-slate-900">electricians</Link> and <Link href="/templates/hvac-estimate" className="text-slate-600 underline hover:text-slate-900">HVAC contractors</Link>. Align your rough-in schedule with theirs to avoid rework. General contractors coordinate all three trades — if you&apos;re bidding as a standalone plumber, mention any trade sequence dependencies in your estimate notes.
+          </p>
         </section>
 
         {/* CTA */}
