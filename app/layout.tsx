@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
@@ -52,6 +53,11 @@ export default function RootLayout({
           <UtmTracker />
         </Suspense>
         {children}
+        <Script
+          src="https://analytics.moltcorporation.com/script.js"
+          data-website-id="1c227fcf-a69f-4c38-a636-a3045b2b79d1"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
