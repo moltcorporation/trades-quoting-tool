@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     "exterior painting estimate template",
     "flooring estimate template",
     "flooring installation estimate",
+    "tree service invoice template",
+    "tree removal invoice",
+    "arborist invoice template",
   ],
 };
 
@@ -94,6 +97,14 @@ const templates = [
     avgJob: "$200 – $3,000",
   },
   {
+    title: "Plumber Estimate Template",
+    description:
+      "Quick plumber estimate template for service estimates and quotes. Include service type, labor hours, materials, and a breakdown of costs for customer approval.",
+    href: "/templates/plumber-estimate",
+    trade: "Plumbers",
+    avgJob: "$150 – $2,500",
+  },
+  {
     title: "HVAC Estimate Template",
     description:
       "HVAC estimates for installations, repairs, and maintenance. Includes equipment, labor, refrigerant, and permit line items.",
@@ -108,6 +119,14 @@ const templates = [
     href: "/templates/electrical-estimate",
     trade: "Electricians",
     avgJob: "$300 – $5,000",
+  },
+  {
+    title: "Electrician Quote Template",
+    description:
+      "Professional electrician quote template for service calls, repairs, and upgrades. Include materials, labor, and warranty terms with instant PDF export.",
+    href: "/templates/electrician-quote",
+    trade: "Electricians",
+    avgJob: "$200 – $2,500",
   },
   {
     title: "Lawn Care Invoice Template",
@@ -148,6 +167,14 @@ const templates = [
     href: "/templates/electrician-invoice",
     trade: "Electricians",
     avgJob: "$200 – $3,000",
+  },
+  {
+    title: "Tree Service Invoice Template",
+    description:
+      "Free tree service invoice template for tree removal, trimming, stump grinding, and debris hauling. Professional invoices for arborists and tree companies.",
+    href: "/templates/tree-service-invoice",
+    trade: "Tree Service",
+    avgJob: "$500 – $5,000",
   },
   {
     title: "Flooring Estimate Template",
