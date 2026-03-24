@@ -186,7 +186,7 @@ export default function HVACEstimateTemplate() {
 
             <h3 className="font-semibold text-slate-900 text-base">Specify equipment by brand, model, and efficiency rating</h3>
             <p>
-              &quot;3-ton AC unit&quot; is not a specification — it is a category. Your estimate should name the manufacturer (Carrier, Trane, Lennox, Goodman, Daikin), the exact model number, the SEER2 rating for cooling, and the AFUE rating for furnaces. This matters because a 14 SEER2 Goodman and a 20 SEER2 Carrier are both &quot;3-ton AC units&quot; but differ by $3,000+ in equipment cost and will save the homeowner very different amounts on monthly energy bills. Being specific protects you from clients claiming you promised a higher-tier unit.
+              &quot;3-ton AC unit&quot; is not a specification — it is a category. Your estimate should name the manufacturer (Carrier, Trane, Lennox, Goodman, Daikin), the exact model number, the SEER2 rating for cooling, and the AFUE rating for furnaces. This matters because a 14 SEER2 Goodman and a 20 SEER2 Carrier are both &quot;3-ton AC units&quot; but differ by $3,000+ in equipment cost and will save the homeowner very different amounts on monthly energy bills. Being specific protects you from clients claiming you promised a higher-tier unit. For new construction or major renovations, coordinate with <Link href="/templates/plumbing-estimate" className="text-slate-600 underline hover:text-slate-900">plumbing and electrical specialists</Link> to align installation schedules.
             </p>
 
             <h3 className="font-semibold text-slate-900 text-base">Itemize refrigerant charges and line sets</h3>
@@ -196,7 +196,7 @@ export default function HVACEstimateTemplate() {
 
             <h3 className="font-semibold text-slate-900 text-base">Account for electrical and permit requirements</h3>
             <p>
-              Many AC replacements require electrical upgrades — a new disconnect, a larger breaker, or updated wiring to meet current code. These costs are real ($200–$600) and should appear on the estimate, not surface as a surprise on installation day. Building permits for HVAC work typically run $100–$300 and are required in most jurisdictions. Including them on the estimate shows professionalism and compliance — two things that set you apart from the handyman offering to install a unit &quot;cash, no permit.&quot;
+              Many AC replacements require <Link href="/templates/electrical-estimate" className="text-slate-600 underline hover:text-slate-900">electrical upgrades — a new disconnect, a larger breaker, or updated wiring</Link> to meet current code. These costs are real ($200–$600) and should appear on the estimate, not surface as a surprise on installation day. Building permits for HVAC work typically run $100–$300 and are required in most jurisdictions. Including them on the estimate shows professionalism and compliance — two things that set you apart from the handyman offering to install a unit &quot;cash, no permit.&quot;
             </p>
 
             <h3 className="font-semibold text-slate-900 text-base">Include seasonal pricing context</h3>

@@ -178,7 +178,7 @@ export default function RoofingEstimateTemplate() {
             </p>
             <h3 className="font-semibold text-slate-900 text-base">Always do an on-site inspection first</h3>
             <p>
-              Never quote a roof from a satellite image alone. Walking the roof lets you assess decking condition, check for multiple layers (which affect tear-off cost), inspect flashing and penetrations, and measure pitch accurately. An on-site inspection takes 30–45 minutes and prevents the surprise change orders that destroy your margin and your reputation.
+              Never quote a roof from a satellite image alone. Walking the roof lets you assess decking condition, check for multiple layers (which affect tear-off cost), inspect flashing and penetrations, and measure pitch accurately. An on-site inspection takes 30–45 minutes and prevents the surprise change orders that destroy your margin and your reputation. If the home needs <Link href="/templates/electrical-estimate" className="text-slate-600 underline hover:text-slate-900">electrical work for roof-mounted systems</Link> or <Link href="/templates/hvac-estimate" className="text-slate-600 underline hover:text-slate-900">HVAC coordination for ventilation</Link>, note these during your walkthrough.
             </p>
             <h3 className="font-semibold text-slate-900 text-base">Itemize materials and labor separately</h3>
             <p>
@@ -190,7 +190,7 @@ export default function RoofingEstimateTemplate() {
             </p>
             <h3 className="font-semibold text-slate-900 text-base">Include a contingency for decking repair</h3>
             <p>
-              On any tear-off job, you will find damaged decking — it is not a question of if, but how much. Your estimate should include a per-square-foot rate for decking replacement (typically $2–$4/sq ft for plywood) with an estimated allowance. This sets expectations upfront and avoids the mid-job phone call that erodes client trust.
+              On any tear-off job, you will find damaged decking — it is not a question of if, but how much. Your estimate should include a per-square-foot rate for decking replacement (typically $2–$4/sq ft for plywood) with an estimated allowance. This sets expectations upfront and avoids the mid-job phone call that erodes client trust. For homes with hidden <Link href="/templates/plumbing-estimate" className="text-slate-600 underline hover:text-slate-900">plumbing or water damage issues</Link> discovered during tear-off, coordinate with other specialists on scope and pricing.
             </p>
             <h3 className="font-semibold text-slate-900 text-base">Set a clear validity period</h3>
             <p>
