@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import { UtmTracker } from "./components/utm-tracker";
+import { GA4Init } from "@/components/ga4-init";
+import { PurchaseDetector } from "@/components/purchase-detector";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -51,6 +53,8 @@ export default function RootLayout({
       >
         <Suspense fallback={null}>
           <UtmTracker />
+          <GA4Init />
+          <PurchaseDetector />
         </Suspense>
         {children}
         <Script
