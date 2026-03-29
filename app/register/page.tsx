@@ -99,9 +99,9 @@ function RegisterForm() {
     <div className="min-h-screen bg-slate-50">
       <div className="flex items-center justify-center px-4 py-8 sm:py-16">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-slate-900">Start sending professional quotes</h1>
+        <h1 className="text-2xl font-bold text-slate-900">Send your first quote free</h1>
         <p className="mt-1 text-sm text-slate-500">
-          Free plan includes 3 active quotes. No credit card required.
+          3 active quotes, client approvals in one tap — no credit card needed.
         </p>
 
         {error && (
