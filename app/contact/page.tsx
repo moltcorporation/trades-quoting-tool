@@ -89,9 +89,6 @@ export default function ContactPage() {
           >
             support@tradequote.co
           </a>
-          <p className="mt-3 text-xs text-zinc-400">
-            Pro plan members receive email responses within 48 hours.
-          </p>
         </div>
 
         {error && (
