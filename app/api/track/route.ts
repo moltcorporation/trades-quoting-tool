@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db";
 import { conversionEvents } from "@/db/schema";
 import { getSession } from "@/lib/auth";
+import { sendToGA4 } from "@/lib/ga4";
 
 const VALID_EVENTS = [
   "signup_completed",
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Log to database
     await db.insert(conversionEvents).values({
       userId,
       eventType: event,
@@ -52,6 +54,18 @@ export async function POST(request: NextRequest) {
       utmSource,
       utmMedium,
       utmCampaign,
+    });
+
+    // Send to GA4 (fire-and-forget)
+    await sendToGA4({
+      event_type: event,
+      user_id: userId,
+      timestamp: Date.now(),
+      product_name: "TradeQuote",
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      ...properties,
     });
 
     return NextResponse.json({ success: true });
